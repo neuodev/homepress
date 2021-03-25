@@ -31,8 +31,24 @@ const featuresSchema = new Schema({
     type: String,
     enum: ['Active', 'Sold'],
   },
+  stories: {
+    type: String,
+    required: [true, 'Stores Is requried'],
+    enum: ['Multi Family', 'Single'],
+    default: 'Single',
+  },
+  swimmingPool: {
+    type: Number,
+    required: [true, 'Swimming Pools Number Is requried'],
+    default: 0,
+  },
 });
 const PropertySchema = new Schema({
+  type: {
+    type: String,
+    requried: [true, 'Property type is requried'],
+    enum: ['Apartments', 'Offices', 'Townhome', 'Studio'],
+  },
   title: {
     type: String,
     required: [true, 'Property Title is required'],
@@ -73,6 +89,18 @@ const PropertySchema = new Schema({
   rooms: {
     type: Number,
     required: [true, 'Rooms Number is required'],
+  },
+  beds: {
+    type: Number,
+    required: [true, 'Beds Number is required'],
+  },
+  Baths: {
+    type: Number,
+    required: [true, 'Beds Number is required'],
+  },
+  grage: {
+    type: Number,
+    required: [true, 'Beds Number is required'],
   },
   builtYear: {
     type: Number,

@@ -2,13 +2,14 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type Query {
-    properties: [Property]!
+    properties(filter: FilterInput!): [Property]!
     property(id: ID!): Property!
   }
 
   type Mutation {
     createProperty(data: createPropertyInput): Property!
   }
+
   type Property {
     id: ID!
     title: String!
@@ -96,6 +97,30 @@ const typeDefs = gql`
     heating: Boolean
     cooling: Boolean
     status: Boolean
+  }
+
+  input FilterInput {
+    sort: [String!]
+    page: Int
+    limit: Int
+    amenities: In
+    city: String
+    price: RangeInput
+    area: RangeInput
+    beds: Int
+    bath: Int
+    status: String
+    title: String
+  }
+  input In {
+    in: [String!]
+  }
+  input RangeInput {
+    gte: Int
+    lte: Int
+  }
+  input and {
+    and: [In]!
   }
 `;
 
