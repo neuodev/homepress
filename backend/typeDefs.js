@@ -119,9 +119,7 @@ const typeDefs = gql`
     gte: Int
     lte: Int
   }
-  input and {
-    and: [In]!
-  }
+  
 `;
 
 module.exports = typeDefs;
