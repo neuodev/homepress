@@ -3,7 +3,7 @@ import './style.css';
 const Showcase = () => {
   return (
     <div
-      className='w-full h-72 '
+      className='w-full h-72 showcase'
       style={{
         background: 'url(./images/slide-1.jpg) no-repeat center center/cover ',
       }}

@@ -5,7 +5,7 @@ const types = ['Apartments', 'Offices', 'Townhome', 'Houses', 'Studio'];
 const Search = () => {
   const [list, setList] = useState(false);
   const [type, setType] = useState(types[0]);
-  const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
+  const [showAdvancedSearch, setShowAdvancedSearch] = useState(true);
   const updateType = type => {
     setType(type);
     setList(false);
@@ -16,8 +16,8 @@ const Search = () => {
   };
   return (
     <div className='py-10 px-5 bg-gray-100 '>
-      <div className='container mx-auto flex items-center justify-center flex-col'>
-        <div className='w-full flex flex-col items-center relative mb-5 '>
+      <div className='container mx-auto max-w-screen-xl flex items-center justify-center flex-col lg:flex-row lg:justify-between'>
+        <div className='w-full lg:w-1/3 flex flex-col items-center relative mb-5 lg:mb-0'>
           <p
             onClick={() => setList(!list)}
             className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
@@ -42,31 +42,33 @@ const Search = () => {
             ))}
           </ul>
         </div>
-        <div className='w-full'>
-          <form onSubmit={onSubmit} className='w-full'>
+        <div className='w-full lg:w-1/2'>
+          <form
+            onSubmit={onSubmit}
+            className='w-full lg:flex  lg:items-center lg:justify-center '>
             <input
-              className='w-full  py-3 px-7 rounded-md shadow-sm border  focus:outline-none focus:ring-2 focus:ring-green-300 mb-5'
+              className='w-full  py-3 px-7 rounded-md shadow-sm border  focus:outline-none focus:ring-2 focus:ring-green-300 mb-5 lg:mb-0 lg:h-12 '
               type='text'
               placeholder='Search'
             />
-            <button className='focus:outline-none w-full py-4 bg-blue-500 rounded-md uppercase tracking-wider text-white font-medium focus:ring-4   '>
+            <button className='focus:outline-none w-full py-4 lg:h-12 lg:w-44 lg:ml-2  bg-blue-500 rounded-md uppercase tracking-wider text-white font-medium focus:ring-4   '>
               <i class='fa fa-search mr-2' aria-hidden='true'></i>
               <span>Search</span>
             </button>
           </form>
         </div>
-        <div className='mt-5 w-full'>
-          <AdvancedSearch show={showAdvancedSearch ? true : false}>
-            <div className='flex items-center justify-center'>
-              <button
-                onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
-                className=' border-b-2 border-blue-400 text-blue-400 font-medium border-dashed focus:outline-none flex items-center justify-between space-x-2'>
-                <p> Advanced Search</p>{' '}
-                <i class='fa fa-chevron-down' aria-hidden='true'></i>
-              </button>
-            </div>
-          </AdvancedSearch>
+        <div className='flex items-center justify-center '>
+          <button
+            onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
+            className=' border-b-2 border-blue-400 text-blue-400 font-medium border-dashed focus:outline-none flex items-center justify-between space-x-2'>
+            <p> Advanced Search</p>{' '}
+            <i class='fa fa-chevron-down' aria-hidden='true'></i>
+          </button>
         </div>
+      </div>
+      <div className='mt-5 w-full'>
+        <AdvancedSearch
+          show={showAdvancedSearch ? true : false}></AdvancedSearch>
       </div>
     </div>
   );

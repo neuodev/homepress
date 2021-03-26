@@ -61,10 +61,11 @@ const AdvancedSearch = ({ children, show }) => {
     <div>
       {children}
       <div
-        className={`bg-gray-200 w-full rounded-md  py-4 shadow-sm mt-5 px-4 ${
+        className={`bg-gray-200 w-full rounded-md  py-4 md:p-8 shadow-sm mt-5 px-4 max-w-screen-xl mx-auto ${
           show ? 'show' : 'hide'
-        }`}>
-        <div>
+        } md:grid  md:grid-cols-12`}>
+        <div className='md:col-span-3'>
+          <h1 className='uppercase font-semibold '>amenities</h1>
           {amenities.map(item => (
             <div className='flex items-center font-medium text-gray-600'>
               <Checkbox value={item} defaultChecked disableRipple />
@@ -72,151 +73,155 @@ const AdvancedSearch = ({ children, show }) => {
             </div>
           ))}
         </div>
-        <div className='w-full flex flex-col items-center relative mb-5 '>
-          <p
-            onClick={() => setShowlist(!showList)}
-            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-            {city}
-            <i
-              class={`fa fa-chevron-down transform ${
-                showList && 'rotate-180'
-              } transition-transform duration-300`}
-              aria-hidden='true'></i>
-          </p>
-          <ul
-            className={`absolute ${
-              !showList ? ' opacity-0 hidden' : 'opacity-100'
-            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
-            {cities.map((city, idx) => (
-              <li
-                onClick={() => updateCity(city)}
-                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
-                key={idx}>
-                {city}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h1 className='text-lg font-medium text-gray-800 mb-2'>Price</h1>
-          <div className='flex items-center justify-between'>
-            <p className='px-10  py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
-              ${price[0]}
+        <div className='md:col-span-9 md:grid md:gap-3 md:grid-cols-12'>
+          <div className='w-full  flex flex-col items-center relative mb-5 md:col-span-6'>
+            <p
+              onClick={() => setShowlist(!showList)}
+              className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+              {city}
+              <i
+                class={`fa fa-chevron-down transform ${
+                  showList && 'rotate-180'
+                } transition-transform duration-300`}
+                aria-hidden='true'></i>
             </p>
-            <p className='px-10 py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
-              ${price[1]}
+            <ul
+              className={`absolute ${
+                !showList ? ' opacity-0 hidden' : 'opacity-100'
+              } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+              {cities.map((city, idx) => (
+                <li
+                  onClick={() => updateCity(city)}
+                  className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                  key={idx}>
+                  {city}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='md:col-span-12 md:flex  md:justify-between md:flex-wrap '>
+            <div className=' md:w-10/12 lg:w-1/2 lg:mr-2'>
+              <h1 className='text-lg font-medium text-gray-800 mb-2'>Price</h1>
+              <div className='flex items-center justify-between'>
+                <p className='px-10  py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
+                  ${price[0]}
+                </p>
+                <p className='px-10 py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
+                  ${price[1]}
+                </p>
+              </div>
+              <div className='mt-3 mb-5'>
+                <Slider
+                  min={10000}
+                  step={2000}
+                  max={880000}
+                  value={price}
+                  onChange={priceHandler}
+                />
+              </div>
+            </div>
+            <div className='md:w-10/12 lg:w-5/12'>
+              <h1 className='text-lg font-medium text-gray-800 mb-2'>Area</h1>
+              <div className='flex items-center justify-between'>
+                <p className='px-4  py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
+                  ${price[0]}
+                </p>
+                <p className='px-4 w-40 text-center py-3 bg-gray-50 rounded-md font-medium shadow-sm'>
+                  ${price[1]}
+                </p>
+              </div>
+              <div className='mt-3 mb-5'>
+                <Slider
+                  min={10000}
+                  step={2000}
+                  max={34000}
+                  value={area}
+                  onChange={areaHandler}
+                />
+              </div>
+            </div>
+          </div>
+          {/* Beds */}
+          <div className='w-full flex flex-col items-center relative mb-5  md:col-span-4'>
+            <p className='w-full mb-1 text-xs font-medium'>Beds</p>
+            <p
+              onClick={() => setShowBeds(!showBeds)}
+              className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+              {beds}
+              <i
+                class={`fa fa-chevron-down transform ${
+                  showBeds && 'rotate-180'
+                } transition-transform duration-300`}
+                aria-hidden='true'></i>
             </p>
+            <ul
+              className={`absolute ${
+                !showBeds ? ' opacity-0 hidden' : 'opacity-100'
+              } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+              {[1, 2, 3, 4].map((beds, idx) => (
+                <li
+                  onClick={() => updateBeds(beds)}
+                  className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                  key={idx}>
+                  {beds}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className='mt-3 mb-5'>
-            <Slider
-              min={10000}
-              step={2000}
-              max={880000}
-              value={price}
-              onChange={priceHandler}
-            />
-          </div>
-        </div>
-        <div>
-          <h1 className='text-lg font-medium text-gray-800 mb-2'>Area</h1>
-          <div className='flex items-center justify-between'>
-            <p className='px-4  py-3 w-40 text-center bg-gray-50 rounded-md font-medium shadow-sm'>
-              ${price[0]}
+          {/* Bath  */}
+          <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5 '>
+            <p className='w-full mb-1 text-xs font-medium'>Bath</p>
+            <p
+              onClick={() => setShowBath(!showBath)}
+              className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+              {bathRoom}
+              <i
+                class={`fa fa-chevron-down transform ${
+                  showBath && 'rotate-180'
+                } transition-transform duration-300`}
+                aria-hidden='true'></i>
             </p>
-            <p className='px-4 w-40 text-center py-3 bg-gray-50 rounded-md font-medium shadow-sm'>
-              ${price[1]}
+            <ul
+              className={`absolute ${
+                !showBath ? ' opacity-0 hidden' : 'opacity-100'
+              } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+              {[1, 2, 3, 4, 5, 6].map((bath, idx) => (
+                <li
+                  onClick={() => updateBath(bath)}
+                  className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                  key={idx}>
+                  {bath}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Status */}
+          <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5 '>
+            <p className='w-full mb-1 text-xs font-medium'>Status</p>
+            <p
+              onClick={() => setShowStatus(!showStatus)}
+              className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+              {status}
+              <i
+                class={`fa fa-chevron-down transform ${
+                  showStatus && 'rotate-180'
+                } transition-transform duration-300`}
+                aria-hidden='true'></i>
             </p>
+            <ul
+              className={`absolute ${
+                !showStatus ? ' opacity-0 hidden' : 'opacity-100'
+              } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+              {['Active', 'Sold'].map((status, idx) => (
+                <li
+                  onClick={() => updateStatus(status)}
+                  className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                  key={idx}>
+                  {status}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className='mt-3 mb-5'>
-            <Slider
-              min={10000}
-              step={2000}
-              max={34000}
-              value={area}
-              onChange={areaHandler}
-            />
-          </div>
-        </div>
-        {/* Beds */}
-        <div className='w-full flex flex-col items-center relative mb-5 '>
-          <p className='w-full mb-1 text-xs font-medium'>Beds</p>
-          <p
-            onClick={() => setShowBeds(!showBeds)}
-            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-            {beds}
-            <i
-              class={`fa fa-chevron-down transform ${
-                showBeds && 'rotate-180'
-              } transition-transform duration-300`}
-              aria-hidden='true'></i>
-          </p>
-          <ul
-            className={`absolute ${
-              !showBeds ? ' opacity-0 hidden' : 'opacity-100'
-            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
-            {[1, 2, 3, 4].map((beds, idx) => (
-              <li
-                onClick={() => updateBeds(beds)}
-                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
-                key={idx}>
-                {beds}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* Bath  */}
-        <div className='w-full flex flex-col items-center relative mb-5 '>
-          <p className='w-full mb-1 text-xs font-medium'>Bath</p>
-          <p
-            onClick={() => setShowBath(!showBath)}
-            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-            {bathRoom}
-            <i
-              class={`fa fa-chevron-down transform ${
-                showBath && 'rotate-180'
-              } transition-transform duration-300`}
-              aria-hidden='true'></i>
-          </p>
-          <ul
-            className={`absolute ${
-              !showBath ? ' opacity-0 hidden' : 'opacity-100'
-            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
-            {[1, 2, 3, 4, 5, 6].map((bath, idx) => (
-              <li
-                onClick={() => updateBath(bath)}
-                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
-                key={idx}>
-                {bath}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* Status */}
-        <div className='w-full flex flex-col items-center relative mb-5 '>
-          <p className='w-full mb-1 text-xs font-medium'>Status</p>
-          <p
-            onClick={() => setShowStatus(!showStatus)}
-            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-            {status}
-            <i
-              class={`fa fa-chevron-down transform ${
-                showStatus && 'rotate-180'
-              } transition-transform duration-300`}
-              aria-hidden='true'></i>
-          </p>
-          <ul
-            className={`absolute ${
-              !showStatus ? ' opacity-0 hidden' : 'opacity-100'
-            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
-            {['Active', 'Sold'].map((status, idx) => (
-              <li
-                onClick={() => updateStatus(status)}
-                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
-                key={idx}>
-                {status}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </div>

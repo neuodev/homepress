@@ -76,15 +76,15 @@ class Testimonials extends Component {
               <em className='max-w-xl px-4 md:text-lg '>{item.text}</em>
             </div>
           ))}
-          <div className='absolute  bottom-2  slider-btn' >
+          <div className='absolute  bottom-2  slider-btn'>
             <button
               onClick={this.prevSlide}
-              className='px-5 py-3 text-gray-800 bg-white mx-3 rounded-full focus:outline-none focus:ring '>
+              className='px-5 py-3 text-gray-800 bg-white mx-3 rounded-full focus:outline-none focus:ring shadow-lg '>
               <i class='fa fa-chevron-left' aria-hidden='true'></i>
             </button>
             <button
               onClick={this.nextSlide}
-              className='px-5 py-3 text-gray-800 bg-white mx-3 rounded-full focus:outline-none focus:ring '>
+              className='px-5 py-3 text-gray-800 bg-white mx-3 rounded-full focus:outline-none focus:ring shadow-lg '>
               <i class='fa fa-chevron-right' aria-hidden='true'></i>
             </button>
           </div>

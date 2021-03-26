@@ -51,10 +51,13 @@
 .deanimate {
   transform: translateY(20px);
   transition: transform 0.7s ease;
-
 }
 .slider-height {
   height: 450px;
+}
+
+.showcase {
+  height: 40vh;
 }
 @media (min-width: 768px) {
   #card-height {
@@ -74,6 +77,9 @@
 @media (min-width: 1280px) {
   #card-height {
     height: 220px;
+  }
+  .showcase {
+    height: 80vh;
   }
 }
 @keyframes show {
