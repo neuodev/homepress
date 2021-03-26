@@ -7,7 +7,7 @@ import Why from '../components/HomeScreen/Why';
 
 const HomeScreen = () => {
   return (
-    <div>
+    <div className='bg-gray-50'>
       <Showcase />
       <Search />
       <Properties />

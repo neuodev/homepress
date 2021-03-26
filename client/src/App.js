@@ -20,7 +20,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client} className='App'>
+    <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <HomeScreen />
       </ThemeProvider>
