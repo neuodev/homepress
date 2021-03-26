@@ -5,6 +5,7 @@ const types = ['Apartments', 'Offices', 'Townhome', 'Houses', 'Studio'];
 const Search = () => {
   const [list, setList] = useState(false);
   const [type, setType] = useState(types[0]);
+  const [showAdvancedSearch, setShowAdvancedSearch] = useState(false);
   const updateType = type => {
     setType(type);
     setList(false);
@@ -55,9 +56,11 @@ const Search = () => {
           </form>
         </div>
         <div className='mt-5 w-full'>
-          <AdvancedSearch>
+          <AdvancedSearch show={showAdvancedSearch ? true : false}>
             <div className='flex items-center justify-center'>
-              <button className=' border-b-2 border-blue-400 text-blue-400 font-medium border-dashed focus:outline-none flex items-center justify-between space-x-2'>
+              <button
+                onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
+                className=' border-b-2 border-blue-400 text-blue-400 font-medium border-dashed focus:outline-none flex items-center justify-between space-x-2'>
                 <p> Advanced Search</p>{' '}
                 <i class='fa fa-chevron-down' aria-hidden='true'></i>
               </button>

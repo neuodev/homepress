@@ -22,21 +22,33 @@ const cities = [
   'San Jose',
 ];
 
-const AdvancedSearch = ({ children }) => {
+const AdvancedSearch = ({ children, show }) => {
   const [city, setCity] = useState(cities[0]);
   const [showList, setShowlist] = useState(false);
   const [price, setPrice] = React.useState([345, 880000]);
   const [area, setArea] = React.useState([1478, 34000]);
-  const [bathRoom, setBathRoom] = useState('');
-  const [showRoomList, setShowRoomList] = useState(true);
-  const [beds, setBeds] = useState('');
-  const [showBeds, setShowBeds] = useState(true);
-  const [status, setStatus] = useState('');
-  const [showStatus, setShowStatus] = useState(true);
+  const [bathRoom, setBathRoom] = useState('Select Bath');
+  const [showBath, setShowBath] = useState(false);
+  const [beds, setBeds] = useState('Select Beds');
+  const [showBeds, setShowBeds] = useState(false);
+  const [status, setStatus] = useState('Select Status');
+  const [showStatus, setShowStatus] = useState(false);
 
   const updateCity = city => {
     setCity(city);
     setShowlist(false);
+  };
+  const updateBath = bath => {
+    setBathRoom(bath);
+    setShowBath(false);
+  };
+  const updateBeds = beds => {
+    setBeds(beds);
+    setShowBeds(false);
+  };
+  const updateStatus = status => {
+    setStatus(status);
+    setShowStatus(false);
   };
   const priceHandler = (event, newValue) => {
     setPrice(newValue);
@@ -48,7 +60,10 @@ const AdvancedSearch = ({ children }) => {
   return (
     <div>
       {children}
-      <div className='bg-gray-200 w-full rounded-md  py-4 shadow-sm mt-5 px-4'>
+      <div
+        className={`bg-gray-200 w-full rounded-md  py-4 shadow-sm mt-5 px-4 ${
+          show ? 'show' : 'hide'
+        }`}>
         <div>
           {amenities.map(item => (
             <div className='flex items-center font-medium text-gray-600'>
@@ -122,7 +137,87 @@ const AdvancedSearch = ({ children }) => {
             />
           </div>
         </div>
-      
+        {/* Beds */}
+        <div className='w-full flex flex-col items-center relative mb-5 '>
+          <p className='w-full mb-1 text-xs font-medium'>Beds</p>
+          <p
+            onClick={() => setShowBeds(!showBeds)}
+            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+            {beds}
+            <i
+              class={`fa fa-chevron-down transform ${
+                showBeds && 'rotate-180'
+              } transition-transform duration-300`}
+              aria-hidden='true'></i>
+          </p>
+          <ul
+            className={`absolute ${
+              !showBeds ? ' opacity-0 hidden' : 'opacity-100'
+            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+            {[1, 2, 3, 4].map((beds, idx) => (
+              <li
+                onClick={() => updateBeds(beds)}
+                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                key={idx}>
+                {beds}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Bath  */}
+        <div className='w-full flex flex-col items-center relative mb-5 '>
+          <p className='w-full mb-1 text-xs font-medium'>Bath</p>
+          <p
+            onClick={() => setShowBath(!showBath)}
+            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+            {bathRoom}
+            <i
+              class={`fa fa-chevron-down transform ${
+                showBath && 'rotate-180'
+              } transition-transform duration-300`}
+              aria-hidden='true'></i>
+          </p>
+          <ul
+            className={`absolute ${
+              !showBath ? ' opacity-0 hidden' : 'opacity-100'
+            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+            {[1, 2, 3, 4, 5, 6].map((bath, idx) => (
+              <li
+                onClick={() => updateBath(bath)}
+                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                key={idx}>
+                {bath}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Status */}
+        <div className='w-full flex flex-col items-center relative mb-5 '>
+          <p className='w-full mb-1 text-xs font-medium'>Status</p>
+          <p
+            onClick={() => setShowStatus(!showStatus)}
+            className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
+            {status}
+            <i
+              class={`fa fa-chevron-down transform ${
+                showStatus && 'rotate-180'
+              } transition-transform duration-300`}
+              aria-hidden='true'></i>
+          </p>
+          <ul
+            className={`absolute ${
+              !showStatus ? ' opacity-0 hidden' : 'opacity-100'
+            } top-14 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10`}>
+            {['Active', 'Sold'].map((status, idx) => (
+              <li
+                onClick={() => updateStatus(status)}
+                className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
+                key={idx}>
+                {status}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
