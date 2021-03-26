@@ -1,13 +1,17 @@
-import logo from './logo.svg';
-import {
-  ApolloClient,
-  InMemoryCache,
-  gql,
-  ApolloProvider,
-  useQuery,
-} from '@apollo/client';
-import './App.css';
-import Home from './components/Home';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import HomeScreen from './screens/HomeScreen';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#2563EB',
+    },
+    secondary: {
+      main: '#3B82F6',
+    },
+  },
+});
 
 const client = new ApolloClient({
   uri: ' http://localhost:5000/graphql',
@@ -17,7 +21,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client} className='App'>
-      <Home />
+      <ThemeProvider theme={theme}>
+        <HomeScreen />
+      </ThemeProvider>
     </ApolloProvider>
   );
 }
