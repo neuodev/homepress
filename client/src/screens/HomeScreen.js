@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/HomeScreen/Footer';
 import Partners from '../components/HomeScreen/Partners';
 import Properties from '../components/HomeScreen/Properties';
 import Search from '../components/HomeScreen/Search';
@@ -15,6 +16,7 @@ const HomeScreen = () => {
       <Why />
       <Testimonials />
       <Partners />
+      <Footer />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const Partners = () => {
               onMouseLeave={() => setAnimate(false)}
               className={`${
                 animate === idx ? 'animate' : 'deanimate'
-              } w-1/2 mb-7 flex items-center justify-center  py-5`}
+              } w-full md:w-1/2 mb-7 flex items-center justify-center  py-5`}
               key={idx}>
               <img src={p} alt={idx} />
             </div>
