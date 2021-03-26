@@ -44,6 +44,15 @@
   transition: opacity 0.1s ease;
 }
 
+.animate {
+  transform: translateY(-20px);
+  transition: transform 0.4s ease;
+}
+.deanimate {
+  transform: translateY(20px);
+  transition: transform 0.7s ease;
+
+}
 .slider-height {
   height: 450px;
 }
@@ -66,7 +75,6 @@
   #card-height {
     height: 220px;
   }
-
 }
 @keyframes show {
   0% {
