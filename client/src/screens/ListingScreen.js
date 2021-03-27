@@ -1,9 +1,12 @@
 import React from 'react';
+import Details from '../components/ListingScreen/Details';
+import NavBar from '../components/ListingScreen/NavBar';
 
 const ListingScreen = () => {
   return (
-    <div>
-      <h1>lisgin screen</h1>
+    <div className='bg-gray-100'>
+      <NavBar />
+      <Details />
     </div>
   );
 };
