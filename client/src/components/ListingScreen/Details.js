@@ -4,6 +4,7 @@ import Description from './Description';
 import Location from './Location';
 import Features from './Features';
 import Amenities from './Amenities';
+import Form from './Form';
 
 const Details = () => {
   return (
@@ -44,10 +45,15 @@ const Details = () => {
           <Slider />
         </div>
       </div>
-      <Description />
-      <Location />
-      <Features />
-      <Amenities />
+      <div className='mb-10'>
+        <Description />
+        <Location />
+        <Features />
+        <Amenities />
+        <div className='max-w-lg   mx-auto my-10 block lg:hidden'>
+          <Form />
+        </div>
+      </div>
     </div>
   );
 };
