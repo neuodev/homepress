@@ -2,25 +2,25 @@ import React from 'react';
 
 const items = [
   {
-    icon: <i className='fa fa-building-o fa-lg ' aria-hidden='true'></i>,
+    icon: <i className='far fa-building fa-lg ' aria-hidden='true'></i>,
     h1: 'WIDE RANGE OF PROPERTIES',
     p:
       'With a robust selection of popular properties on hand, as well as leading properties from experts.',
   },
   {
-    icon: <i className='fas fa-coins  px-1 '></i>,
+    icon: <i className='far fa-coins  px-1 '></i>,
     h1: 'FINANCING MADE EASY',
     p:
       'Our stress-free finance department that can find financial solutions to save you money.',
   },
   {
-    icon: <i className='fa fa-users' aria-hidden='true'></i>,
+    icon: <i className='far fa-users' aria-hidden='true'></i>,
     h1: 'TRUSTED BY THOUSANDS',
     p:
       '10 new offers every day. 350 offers on site, trusted by a community of thousands of users.',
   },
   {
-    icon: <i class='fas fa-clock  px-1   '></i>,
+    icon: <i class='far fa-clock  px-1   '></i>,
     h1: 'NEAR BY ME',
     p: 'Search near top-rated schools and explore neighborhoods.',
   },
