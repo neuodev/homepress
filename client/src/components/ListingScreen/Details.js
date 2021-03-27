@@ -1,6 +1,9 @@
 import Slider from './Slider';
 import React from 'react';
 import Description from './Description';
+import Location from './Location';
+import Features from './Features';
+import Amenities from './Amenities';
 
 const Details = () => {
   return (
@@ -42,6 +45,9 @@ const Details = () => {
         </div>
       </div>
       <Description />
+      <Location />
+      <Features />
+      <Amenities />
     </div>
   );
 };

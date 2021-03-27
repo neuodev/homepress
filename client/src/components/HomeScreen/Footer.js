@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div className='bg-gray-800 text-white py-10  px-5'>
-      <div className='md:flex flex-row-reverse justify-between items-center container mx-auto max-w-screen-xl '>
+      <div className='md:flex flex-row-reverse justify-between items-center container mx-auto  max-w-screen-lg '>
         <div className='mb-8 w-full md:w-1/2 max-w-xl'>
           <h1 className='text-xl font-semibold mb-3'>Subscribe</h1>
           <div className='flex items-center   w-full bg-gray-700 px-4 mb-2  '>
@@ -48,7 +48,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className='md:flex items-center justify-between container mx-auto border-t pt-6 max-w-screen-xl'>
+      <div className='md:flex items-center justify-between container mx-auto border-t pt-6 max-w-screen-lg'>
         <p>
           Copyright © 2021. HomePress – Real Estate WordPress Theme by Ahmed
           Ibrahim.

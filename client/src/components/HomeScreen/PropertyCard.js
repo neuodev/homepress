@@ -4,29 +4,29 @@ const features = [
   {
     name: 'Beds',
     number: 4,
-    icon: <i class='fa fa-bed' aria-hidden='true'></i>,
+    icon: <i class='far fa-bed' aria-hidden='true'></i>,
   },
   {
     name: 'Baths',
     number: 4,
-    icon: <i class='fa fa-bath' aria-hidden='true'></i>,
+    icon: <i class='far fa-bath' aria-hidden='true'></i>,
   },
   {
     name: 'sq ft',
     number: 4200,
-    icon: <i class='fas fa-layer-group    '></i>,
+    icon: <i class='far fa-layer-group    '></i>,
   },
   {
     name: false,
     number: 2017,
-    icon: <i class='fa fa-building' aria-hidden='true'></i>,
+    icon: <i class='far fa-building' aria-hidden='true'></i>,
   },
 ];
 
 const PropertyCard = () => {
   return (
     <div
-      className='col-span-6 lg:col-span-4 xl:col-span-6  rounded-lg overflow-hidden  shadow-xl hover:shadow-2xl transition-all duration-300 border xl:flex '
+      className='col-span-6 lg:col-span-4 xl:col-span-6  rounded-lg overflow-hidden  shadow-xld hover:shadow-2xld border xl:flex '
       id='card-height'>
       <div className=' w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-red-50 rounded-md'>
         <img
