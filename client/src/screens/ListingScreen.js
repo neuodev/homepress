@@ -5,7 +5,7 @@ import Footer from '../components/HomeScreen/Footer';
 const ListingScreen = () => {
   return (
     <div className='bg-gray-100'>
-      <NavBar />
+      <NavBar title='Listing Name' />
       <Details />
 
       <Footer />

@@ -1,15 +1,32 @@
 .slider-height-listing {
   height: 250px;
 }
-
+#grid-h {
+  height: 500px;
+}
 @media (min-width: 768px) {
   .slider-height-listing {
     height: 350px;
+  }
+  #grid-h {
+    height: calc(100vh - 120px);
   }
 }
 @media (min-width: 1024px) {
   .slider-height-listing {
     height: 450px;
+  }
+  #pro-h {
+    height: calc(100vh - 120px);
+    overflow: scroll;
+  }
+
+  #pro-h::-webkit-scrollbar {
+    display: none;
+  }
+  #pro-h {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 @keyframes showSlideImg {
