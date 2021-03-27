@@ -81,6 +81,16 @@
     align-items: center;
     z-index: 50;
   }
+  .show {
+    animation: showLarge 2s ease;
+  }
+
+  .hide {
+    height: 0;
+    overflow: hidden;
+    animation: hideLarge 1s ease;
+    animation-fill-mode: both;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -91,6 +101,7 @@
     height: 80vh;
   }
 }
+
 @keyframes show {
   0% {
     height: 0px;
@@ -102,9 +113,31 @@
     overflow: hidden;
   }
 }
+@keyframes showLarge {
+  0% {
+    height: 0px;
+    overflow: hidden;
+  }
+
+  100% {
+    height: 420px;
+    overflow: hidden;
+  }
+}
 @keyframes hide {
   0% {
     height: 700px;
+    overflow: hidden;
+  }
+  100% {
+    height: 0px;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+@keyframes hideLarge {
+  0% {
+    height: 420px;
     overflow: hidden;
   }
   100% {

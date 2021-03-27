@@ -57,7 +57,7 @@ const Search = () => {
             </button>
           </form>
         </div>
-        <div className='flex items-center justify-center '>
+        <div className='flex items-center justify-center mt-5 lg:mt-0 '>
           <button
             onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
             className=' border-b-2 border-blue-400 text-blue-400 font-medium border-dashed focus:outline-none flex items-center justify-between space-x-2'>
@@ -66,7 +66,7 @@ const Search = () => {
           </button>
         </div>
       </div>
-      <div className='mt-5 w-full'>
+      <div className='mt-5 w-full '>
         <AdvancedSearch
           show={showAdvancedSearch ? true : false}></AdvancedSearch>
       </div>

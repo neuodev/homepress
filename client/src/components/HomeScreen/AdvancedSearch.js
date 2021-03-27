@@ -61,7 +61,7 @@ const AdvancedSearch = ({ children, show }) => {
     <div>
       {children}
       <div
-        className={`bg-gray-200 w-full rounded-md  py-4 md:p-8 shadow-sm mt-5 px-4 max-w-screen-xl mx-auto ${
+        className={`bg-gray-200 w-full rounded-md  py-6 md:p-8 shadow-md mt-5 px-7 max-w-screen-xl mx-auto ${
           show ? 'show' : 'hide'
         } md:grid  md:grid-cols-12`}>
         <div className='md:col-span-3'>
