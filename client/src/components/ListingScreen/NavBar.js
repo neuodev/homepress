@@ -5,7 +5,7 @@ const NavBar = () => {
     <>
       <div className='text-gray-700  bg-white shadow-lg '>
         <div class='p-5'>
-          <div className=' md:flex items-center justify-between container mx-auto '>
+          <div className=' md:flex items-center justify-between container mx-auto  max-w-screen-lg '>
             <img
               class='bg-gray-500'
               className='mb-4'
@@ -25,13 +25,13 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-        <div class='flex  items-center space-x-3 text-gray-400 border-t px-5 py-2 text-sm mx-auto container'>
+        <div class='flex  items-center space-x-3 text-gray-400 border-t px-5 py-2 text-sm mx-auto container max-w-screen-lg'>
           <h1>Homepress</h1>
           <i class='fa fa-chevron-right' aria-hidden='true'></i>
           <p>Listing Name</p>
         </div>
       </div>
-      <div className='lg:flex lg:items-center lg:justify-between lg:pb-5 container mx-auto'>
+      <div className='lg:flex lg:items-center lg:justify-between lg:pb-5 container mx-auto max-w-screen-lg'>
         <div className='p-5 pb-0 flex items-center justify-center space-x-3'>
           <h1 className='bg-green-200 text-green-600 font-semibold uppercase tracking-wider py-1 px-3 rounded-md '>
             houses

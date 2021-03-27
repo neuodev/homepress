@@ -1,0 +1,22 @@
+.slider-height-listing {
+  height: 250px;
+}
+
+@media (min-width: 768px) {
+  .slider-height-listing {
+    height: 350px;
+  }
+}
+@media (min-width: 1024px) {
+  .slider-height-listing {
+    height: 450px;
+  }
+}
+@keyframes showSlideImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
