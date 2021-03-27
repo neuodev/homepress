@@ -1,10 +1,11 @@
 import Slider from './Slider';
 import React from 'react';
+import Description from './Description';
 
 const Details = () => {
   return (
     <div>
-      <div className='container mx-auto border-t pt-5 max-w-screen-lg' >
+      <div className='container mx-auto border-t pt-5 max-w-screen-lg'>
         <div className='flex items-center justify-center flex-col  lg:flex-row lg:justify-between lg:pb-5 lg:px-5'>
           <div>
             <h1 className='text-2xl font-semibold   mb-5'>
@@ -40,6 +41,7 @@ const Details = () => {
           <Slider />
         </div>
       </div>
+      <Description />
     </div>
   );
 };
