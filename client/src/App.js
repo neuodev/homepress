@@ -1,7 +1,8 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import HomeScreen from './screens/HomeScreen';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ListingScreen from './screens/ListingScreen';
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -21,9 +22,14 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <HomeScreen />
-      </ThemeProvider>
+      <Router>
+        <ThemeProvider theme={theme}>
+          <Switch>
+            <Route path='/' exact component={HomeScreen} />
+            <Route path='/listing' exact component={ListingScreen} />
+          </Switch>
+        </ThemeProvider>
+      </Router>
     </ApolloProvider>
   );
 }
