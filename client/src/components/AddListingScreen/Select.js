@@ -5,8 +5,14 @@ const Select = ({ item, setItem, show, setShow, list, label }) => {
     setItem(item);
     setShow(false);
   };
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#list')) {
+      setShow(false);
+    }
+  });
   return (
-    <div className=''>
+    <div id='list' className=''>
       <label className='font-semibold mb-1 text-sm' htmlFor={label}>
         {label}
       </label>
@@ -24,7 +30,7 @@ const Select = ({ item, setItem, show, setShow, list, label }) => {
         <ul
           className={`absolute bg-gray-100 w-full py-2  ${
             !show && 'hidden'
-          } max-h-32 overflow-y-scroll`}
+          } max-h-32 overflow-y-scroll shadow-lg  `}
           id='scroll'>
           {list.map((item, idx) => (
             <li
