@@ -2,6 +2,8 @@ import {
   GET_HOME_PROPERTY_FAIL,
   GET_HOME_PROPERTY_REQUEST,
   GET_HOME_PROPERTY_SUCCESS,
+  PROPERTY_DETAIL_FAIL,
+  PROPERTY_DETAIL_SUCCESS,
 } from '../actions/actionsType';
 export const homeProperty = (
   state = {
@@ -25,6 +27,25 @@ export const homeProperty = (
         loading: false,
         error: payload,
       };
+    default:
+      return state;
+  }
+};
+
+const getProperty = (state = {}, { type, payload }) => {
+  switch (type) {
+    case PROPERTY_DETAIL_SUCCESS:
+      return {
+        loading: false,
+        property: payload,
+      };
+
+    case PROPERTY_DETAIL_FAIL:
+      return {
+        loading: false,
+        error: payload,
+      };
+
     default:
       return state;
   }
