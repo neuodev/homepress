@@ -30,7 +30,7 @@ const Select = ({ item, setItem, show, setShow, list, label }) => {
         <ul
           className={`absolute bg-gray-100 w-full py-2  ${
             !show && 'hidden'
-          } max-h-32 overflow-y-scroll shadow-lg  `}
+          } max-h-32 overflow-y-scroll shadow-lg z-50 `}
           id='scroll'>
           {list.map((item, idx) => (
             <li

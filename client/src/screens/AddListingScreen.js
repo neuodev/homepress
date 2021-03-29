@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import CreateListing from '../components/AddListingScreen/CreateListing';
 import Done from '../components/AddListingScreen/Done';
 import Listingtype from '../components/AddListingScreen/Listingtype';
+import Footer from '../components/HomeScreen/Footer';
 import NavBar from '../components/ListingScreen/NavBar';
 
 const AddListingScreen = () => {
@@ -17,6 +18,8 @@ const AddListingScreen = () => {
           <Route path='/addListing/done' exact component={Done} />
         </Switch>
       </div>
+
+      <Footer />
     </div>
   );
 };

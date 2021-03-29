@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Steps from './Steps';
 import Select from './Select';
 import './style.css';
+import { Checkbox } from '@material-ui/core';
 const selectCategory = ['Buy', 'Rent', 'Sold'];
 const selectStores = ['Single Family', 'Multi Family'];
 const selectRegion = [
@@ -15,12 +16,28 @@ const selectRegion = [
   'San ose',
 ];
 
+const amenities = [
+  'Basement',
+  'Car garage',
+  'Central Heating ',
+  'Cleaning Service',
+  'Doorman',
+  'Elevator ',
+  ' Fireplace  ',
+  'Hardwood Flows ',
+  'Onsite Parking',
+  'Stunning views ',
+  'Stunning views ',
+  'Unit Washer/Dryer ',
+];
+
 const selectBeds = [1, 2, 3, 4, 5, 6];
 const selectBaths = [1, 2, 3, 4, 5, 6];
 const selectGarage = [1, 2, 3, 4, 5, 6];
 const selectHeating = ['Yes', 'No'];
 const selectCooling = ['Yes', 'No'];
-const status = ['Active', 'Sold'];
+const selectStatus = ['Active', 'Sold'];
+
 const CreateListing = () => {
   const [category, setCagegory] = useState('Select');
   const [showCategory, setShowCategory] = useState(false);
@@ -126,8 +143,8 @@ const CreateListing = () => {
             cols='30'
             rows='10'></textarea>
         </div>
-        <div className='grid gap-4 grid-cols-12'>
-          <div className='col-span-4'>
+        <div className='grid gap-4 grid-cols-12 mb-5'>
+          <div className='col-span-12 md:col-span-4'>
             <Select
               label='Beds'
               item={beds}
@@ -137,7 +154,7 @@ const CreateListing = () => {
               setShow={setShowBeds}
             />
           </div>
-          <div className='col-span-4'>
+          <div className='col-span-12 md:col-span-4'>
             <Select
               label='Baths'
               item={baths}
@@ -147,7 +164,38 @@ const CreateListing = () => {
               setShow={setShowBaths}
             />
           </div>
-          <div className='col-span-4'>
+          <div className='col-span-12 md:col-span-4'>
+            <label htmlFor='year' className='font-semibold text-sm mb-1 '>
+              Year Built
+            </label>
+            <input
+              type='text'
+              className='w-full bg-gray-100 focus:outline-none py-2 px-4 '
+            />
+          </div>
+        </div>
+        <div className='grid grid-cols-12 gap-4 mb-5'>
+          <div className='col-span-12 md:col-span-4'>
+            <Select
+              label='Heating'
+              item={heating}
+              setItem={setHeating}
+              list={selectHeating}
+              show={showHeating}
+              setShow={setShowHeating}
+            />
+          </div>
+          <div className='col-span-12 md:col-span-4'>
+            <Select
+              label='Cooling'
+              item={cooling}
+              setItem={setCooling}
+              list={selectCooling}
+              show={showCooling}
+              setShow={setShowCooling}
+            />
+          </div>
+          <div className='col-span-12 md:col-span-4'>
             <Select
               label='Garage'
               item={garage}
@@ -156,6 +204,42 @@ const CreateListing = () => {
               show={showGarage}
               setShow={setShowGarage}
             />
+          </div>
+        </div>
+        <div className='grid gap-5 grid-cols-12 mb-5'>
+          <div className='col-span-12 md:col-span-6 flex flex-col'>
+            <label htmlFor='area' className='text-sm font-semibold  mb-1'>
+              sq ft
+            </label>
+            <input
+              className='bg-gray-100 py-2 px-4  w-full focus:outline-none '
+              type='text'
+            />
+          </div>
+          <div className='col-span-12 md:col-span-6'>
+            <Select
+              label='Status'
+              item={status}
+              setItem={setStatus}
+              list={selectStatus}
+              show={showStatus}
+              setShow={setShowStatus}
+            />
+          </div>
+        </div>
+        <div className='mb-24'>
+          <div>
+            <h1 className='text-sm font-semibold  mb-1'>Amenities</h1>
+          </div>
+          <div className='grid grid-cols-12 gap-2'>
+            {amenities.map((item, idx) => (
+              <div
+                key={idx}
+                className='flex items-center col-span-6 md:col-span-4 '>
+                <Checkbox />
+                <p>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
