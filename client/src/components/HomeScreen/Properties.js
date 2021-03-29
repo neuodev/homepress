@@ -2,14 +2,21 @@ import React, { useEffect } from 'react';
 import PropertyCard from './PropertyCard';
 import { useQuery } from '@apollo/client';
 import { useSelector, useDispatch } from 'react-redux';
-import { getHomeProperty } from '../../actions/property';
+import { GET_PROPERTY } from '../../querys/querys';
+import {
+  GET_HOME_PROPERTY_FAIL,
+  GET_HOME_PROPERTY_SUCCESS,
+} from '../../actions/actionsType';
 const Properties = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-   
-    // dispatch(getHomeProperty());
-  }, []);
 
+  const { loading, error, data } = useQuery(GET_PROPERTY);
+  console.log(data);
+  if (error) {
+    dispatch({ type: GET_HOME_PROPERTY_FAIL, payload: error });
+  } else if (data) {
+    dispatch({ type: GET_HOME_PROPERTY_SUCCESS, payload: data });
+  }
   return (
     <div className='container mx-auto'>
       <div className='flex items-center flex-col justify-center mt-6'>
@@ -21,13 +28,18 @@ const Properties = () => {
         </p>
       </div>
 
-      <div className='grid grid-cols-12 gap-4 px-3 my-10 max-w-screen-xl mx-auto'>
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
-        <PropertyCard />
+      <div className='grid grid-cols-12 gap-5 px-3 my-10 max-w-screen-xl mx-auto'>
+        {loading ? (
+          <div>
+            <h1>loading</h1>
+          </div>
+        ) : error ? (
+          <div>error</div>
+        ) : (
+          data.properties.map(property => (
+            <PropertyCard property={property} key={property.id} />
+          ))
+        )}
       </div>
       <div className='flex items-center justify-center mb-3'>
         <button className='bg-blue-600 text-white  px-6 py-3 rounded-md font-medium lg:text-xl focus:outline-none focus:ring uppercase tracking-wider   '>
