@@ -65,8 +65,8 @@ const Details = ({ property }) => {
         <div className='flex items-center justify-center flex-col  lg:flex-row lg:justify-between lg:pb-5 lg:px-5'>
           <div>
             <h1 className='text-2xl font-semibold   mb-5'>{title}</h1>
-            <div className='flex items-center justify-center '>
-              <div className='flex items-center justify-center mr-4 '>
+            <div className='flex items-center justify-center lg:justify-start'>
+              <div className='flex items-center justify-center mr-4  '>
                 <i
                   className='fa fa-bed mr-2 text-green-500 text-lg '
                   aria-hidden='true'></i>

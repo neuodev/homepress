@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 const Showcase = () => {
   return (
@@ -10,21 +11,27 @@ const Showcase = () => {
       id='overlayd'>
       <div className='p-5 absolute z-10 w-full top-0   '>
         <div className=' md:flex items-center justify-between container mx-auto'>
-          <img className='mb-9' src='./images/logo-dark.svg' alt='' />
+          <Link to='/'>
+            <img
+              className='mb-9'
+              src='./images/logo-dark.svg'
+              alt='homepress'
+            />
+          </Link>
           <div className='flex items-center justify-center space-x-3'>
-            <button className='border border-gray-900 text-black px-3 py-2 rounded-full focus:outline-black  '>
+            <button className='border border-gray-600 text-gray-800 px-3 py-2 rounded-full focus:outline-black  '>
               Add Listing
             </button>
-            <button className='border border-gray-900 text-black px-3 py-2 rounded-full focus:outline-black  '>
+            <button className='border border-gray-600 text-gray-800 px-3 py-2 rounded-full focus:outline-black  '>
               <i class='fa fa-heart' aria-hidden='true'></i>
             </button>
-            <button className='border border-gray-900 text-balck px-3 py-2 rounded-full focus:outline-black  '>
+            <button className='border border-gray-600 text-gray-800 px-3 py-2 rounded-full focus:outline-black  '>
               <i class='fa fa-retweet' aria-hidden='true'></i>
             </button>
           </div>
         </div>
       </div>
-      <div className=' container mx-auto   hidden md:block'>
+      <div className=' container mx-auto   hidden md:block px-5'>
         <p className='text-blue-500 text-xl'>PASADENA REALTOR & BROKER</p>
         <h1 className='text-4xl max-w-sm lg:text-6xl  lg:max-w-xl  font-extrabold text-gray-800 '>
           Making Good things happen.
