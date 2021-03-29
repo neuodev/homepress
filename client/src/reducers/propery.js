@@ -32,7 +32,7 @@ export const homeProperty = (
   }
 };
 
-const getProperty = (state = {}, { type, payload }) => {
+export const getProperty = (state = {}, { type, payload }) => {
   switch (type) {
     case PROPERTY_DETAIL_SUCCESS:
       return {

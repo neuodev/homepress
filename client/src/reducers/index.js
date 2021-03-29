@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import { homeProperty } from './propery';
+import { homeProperty, getProperty } from './propery';
 export default combineReducers({
   homeProperty,
+  getProperty,
 });
