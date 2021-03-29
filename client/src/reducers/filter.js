@@ -11,16 +11,9 @@ import {
 export const filter = (state = {}, { type, payload }) => {
   switch (type) {
     case ADD_AMENITIES:
-      const isExist = state.amenities.find(a => a === payload);
-      let amenities;
-      if (isExist) {
-        amenities = state.amenities.filter(a => a !== payload);
-      } else {
-        amenities = [...state.amenities, payload];
-      }
       return {
         ...state,
-        amenities,
+        amenities: payload,
       };
 
     case COUNTERY:
