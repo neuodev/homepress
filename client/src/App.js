@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import ListingScreen from './screens/ListingScreen';
 import SearchScreen from './screens/SearchScreen';
 import AddListingScreen from './screens/AddListingScreen';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
