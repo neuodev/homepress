@@ -5,6 +5,7 @@ import Footer from '../components/HomeScreen/Footer';
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTY_DETAILS } from '../querys/querys';
 import ListingSkeleton from '../components/ListingScreen/ListingSkeleton';
+import Alert from '../components/utils/Alert';
 const ListingScreen = ({ match }) => {
   const id = match.params.id;
   const { data, error, loading } = useQuery(GET_PROPERTY_DETAILS, {
@@ -22,7 +23,9 @@ const ListingScreen = ({ match }) => {
           <ListingSkeleton />
         </div>
       ) : true ? (
-        <div>error</div>
+        <div>
+          <Alert serverity='error' message='lorem error handler' />
+        </div>
       ) : (
         <Details property={data.property} />
       )}
