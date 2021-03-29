@@ -10,6 +10,7 @@ const Properties = () => {
           Sartorial chicharrones blue bottle taxidermy helvetica ethical, beard
           swag offal kinfolk. You probably haven’t heard of them hell of offal
           mlkshk messenger bag squid plaid tousled.
+          
         </p>
       </div>
 
