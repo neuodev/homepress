@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropertyCard from './PropertyCard';
-
+import { useQuery } from '@apollo/client';
+import { useSelector, useDispatch } from 'react-redux';
+import { getHomeProperty } from '../../actions/property';
 const Properties = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+   
+    // dispatch(getHomeProperty());
+  }, []);
+
   return (
     <div className='container mx-auto'>
       <div className='flex items-center flex-col justify-center mt-6'>
@@ -10,7 +18,6 @@ const Properties = () => {
           Sartorial chicharrones blue bottle taxidermy helvetica ethical, beard
           swag offal kinfolk. You probably haven’t heard of them hell of offal
           mlkshk messenger bag squid plaid tousled.
-          
         </p>
       </div>
 

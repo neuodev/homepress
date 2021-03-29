@@ -25,6 +25,5 @@ export const getHomeProperty = useQuery => dispatch => {
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_PROPERTY);
-  console.log(loading, error, data);
+
 };
