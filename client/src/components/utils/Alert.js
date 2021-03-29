@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Alert = ({ serverity, message }) => {
-
   return (
-    <div className={`max-w-screen-lg mx-auto px-6 my-10 py-6 `}>
+    <div className={`max-w-screen-lg mx-auto my-2 `}>
       <div
         className={` ${
           serverity === 'error'
@@ -13,7 +12,7 @@ const Alert = ({ serverity, message }) => {
             : serverity === 'warning'
             ? 'bg-yellow-200'
             : 'bg-blue-200'
-        } flex flex-row items-center justify-start px-6  py-6 `}>
+        } flex flex-row items-center justify-start px-6  py-3 `}>
         {serverity === 'error' ? (
           <i class='far fa-exclamation-square mr-2 text-red-800 p-3 rounded-full bg-red-300'></i>
         ) : serverity === 'success' ? (

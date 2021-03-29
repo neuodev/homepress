@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { validate } from '../../utils/validateInput';
+import Alert from '../utils/Alert';
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ const Form = () => {
   const [phoneAlert, setPhoneAlert] = useState('');
   const [messageAlert, setMessageAlert] = useState('');
   const [successAlert, setSuccessAlert] = useState(false);
+  const [loading, setLoading] = useState(false);
   const onSubmit = e => {
     e.preventDefault();
 
@@ -26,6 +28,12 @@ const Form = () => {
     );
 
     if (!isValid) return;
+
+    setLoading(true);
+    setTimeout(() => {
+      setSuccessAlert('Message Sended successfully');
+      setLoading(false);
+    }, 500);
   };
 
   return (
@@ -112,9 +120,18 @@ const Form = () => {
         </div>
         <button
           type='submit'
-          className='w-full  py-3 bg-blue-600  text-white  uppercase tracking-wide text-sm font-semibold mt-3 focus:ring focus:outline-none'>
+          className='w-full  py-4 bg-blue-600  text-white  uppercase tracking-wide text-sm font-semibold mt-3 focus:ring focus:outline-none'>
           contact property
         </button>
+
+        {loading ? (
+          <div className='flex items-center justify-center my-7'>
+            <div className='w-7 h-7 animate-ping bg-blue-400 rounded-full'></div>
+          </div>
+        ) : (
+          successAlert && <Alert serverity='success' message={successAlert} />
+        )}
+        <Alert serverity='warning' message='For test only' />
       </form>
     </div>
   );
