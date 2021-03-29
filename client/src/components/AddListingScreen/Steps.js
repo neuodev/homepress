@@ -17,7 +17,7 @@ const steps = [
 
 const Steps = ({ activeStep }) => {
   return (
-    <div className='mt-16 container mx-auto max-w-screen-lg '>
+    <div className='hidden sm:block mt-16 container mx-auto max-w-screen-lg px-4'>
       <div className='text-center mb-10'>
         <h1 className='text-5xl font-bold text-gray-700'>Add New Property</h1>
       </div>
