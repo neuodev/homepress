@@ -22,9 +22,9 @@ const ListingScreen = ({ match }) => {
         <div>
           <ListingSkeleton />
         </div>
-      ) : true ? (
+      ) : error ? (
         <div>
-          <Alert serverity='error' message='lorem error handler' />
+          <Alert serverity='error' message={error} />
         </div>
       ) : (
         <Details property={data.property} />
