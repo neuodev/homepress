@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { validate } from '../../utils/validateInput';
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,7 +14,16 @@ const Form = () => {
   const onSubmit = e => {
     e.preventDefault();
 
-   
+    validate(
+      name,
+      email,
+      phone,
+      message,
+      setNameAlert,
+      setEmailAlert,
+      setPhoneAlert,
+      setMessageAlert
+    );
   };
 
   return (
