@@ -14,8 +14,8 @@ const Search = () => {
     setList(false);
   };
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const onClick = () => {
+    
   };
 
   document.addEventListener('click', e => {
@@ -26,7 +26,7 @@ const Search = () => {
   return (
     <div className='py-10 px-5 bg-gray-100 '>
       <div className='container mx-auto max-w-screen-xl grid gap-5  grid-cols-12'>
-        <div className='w-full  flex flex-col items-center relative   filter-list col-span-12 md:col-span-6 lg:col-span-3 '>
+        <div className='w-full  flex flex-col items-center relative   filter-list col-span-12 md:col-span-6 lg:col-span-3 cursor-pointer'>
           <p
             onClick={() => setList(!list)}
             className='border font-medium  w-full bg-white py-3 lg:py-4   shadow-sm px-7 flex items-center justify-between'>
@@ -57,7 +57,9 @@ const Search = () => {
           placeholder='Search'
         />
         <div className='col-span-12 md:col-span-6 lg:col-span-3 '>
-          <button className='focus:outline-none col-span-12 md:col-span-6  w-full py-4   font-semibold bg-blue-500 uppercase tracking-wider text-white focus:ring-4   '>
+          <button
+            onClick={onClick}
+            className='focus:outline-none col-span-12 md:col-span-6  w-full py-4   font-semibold bg-blue-500 uppercase tracking-wider text-white focus:ring-4   '>
             <i class='fa fa-search mr-2' aria-hidden='true'></i>
             <span>Search</span>
           </button>

@@ -6,6 +6,7 @@ import {
   COUNTERY,
   PRICE,
   STATUS,
+  TITLE,
 } from '../actions/actionsType';
 
 export const filter = (state = {}, { type, payload }) => {
@@ -14,6 +15,11 @@ export const filter = (state = {}, { type, payload }) => {
       return {
         ...state,
         amenities: payload,
+      };
+    case TITLE:
+      return {
+        ...state,
+        title: payload,
       };
 
     case COUNTERY:
