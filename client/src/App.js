@@ -32,7 +32,7 @@ function App() {
           <ThemeProvider theme={theme}>
             <Switch>
               <Route path='/' exact component={HomeScreen} />
-              <Route path='/listing' exact component={ListingScreen} />
+              <Route path='/listing/:id' exact component={ListingScreen} />
               <Route path='/search' exact component={SearchScreen} />
               <Route path='/addListing' component={AddListingScreen} />
             </Switch>

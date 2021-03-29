@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // const features = [
 //   {
@@ -33,6 +34,7 @@ const PropertyCard = ({ property }) => {
     images,
     price,
     title,
+    id,
   } = property;
 
   const newPrice = price - price * (discount / 100);
@@ -40,15 +42,19 @@ const PropertyCard = ({ property }) => {
     <div
       className='col-span-6 lg:col-span-4 xl:col-span-6  rounded-lg overflow-hidden  shadow-lg hover:shadow-2xl border xl:flex transition-shadow duration-500'
       id='card-height'>
-      <div className=' w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-red-50 rounded-md xl:mr-3'>
-        <img
-          className='object-cover block w-full h-full'
-          src={images[0]}
-          alt='property name'
-        />
+      <div className=' w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-blue-50 rounded-md xl:mr-3'>
+        <Link to={`/listing/${id}`}>
+          <img
+            className='object-cover block w-full h-full'
+            src={images[0]}
+            alt='property name'
+          />
+        </Link>
       </div>
       <div className='px-3 py-4 mt-1 h-1/2 '>
-        <h1 className='mb-4 text-lg font-semibold md:text-2xl '>{title}</h1>
+        <Link to={`/listing/${id}`}>
+          <h1 className='mb-4 text-lg font-semibold md:text-2xl '>{title}</h1>
+        </Link>
         <div className='flex flex-wrap items-center justify-start mb-4 '>
           <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
             <div className='w-5 h-5 text-gray-400 mr-1 md:mr-2'>
