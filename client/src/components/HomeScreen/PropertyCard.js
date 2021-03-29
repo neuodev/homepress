@@ -1,28 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// const features = [
-//   {
-//     name: '',
-//     number: 4,
-//     icon: ,
-//   },
-//   {
-//     name: 'Baths',
-//     number: 4,
-//     icon: ,
-//   },
-//   {
-//     name: 'sq ft',
-//     number: 4200,
-//     icon: ,
-//   },
-//   {
-//     name: false,
-//     number: 2017,
-//     icon:,
-//   },
-// ];
+
 
 const PropertyCard = ({ property }) => {
   const {

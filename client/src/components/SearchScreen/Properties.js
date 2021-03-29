@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { SEARCH_PROPERTY } from '../../querys/querys';
 import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
-
+import { useSelector } from 'react-redux';
 const selectSort = [
   {
     text: 'Newset',
@@ -25,7 +25,7 @@ const selectSort = [
 const Properties = () => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
-
+  const { title } = useSelector(state => state.filter);
   const updateSelect = sort => {
     setSowList(false);
     setSort(sort);
@@ -90,7 +90,7 @@ const Properties = () => {
           <Alert serverity='error' message={error} />
         ) : (
           data.properties.map(property => (
-            <PropertySearchCard key={property.id} />
+            <PropertySearchCard property={property} key={property.id} />
           ))
         )}
       </div>
