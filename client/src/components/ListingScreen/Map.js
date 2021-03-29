@@ -27,35 +27,9 @@ const MapboxGLMap = ({ location }) => {
       map.on('load', () => {
         setMap(map);
         map.resize();
-        map.addLayer({
-          id: 'points',
-          type: 'symbol',
-          source: {
-            type: 'geojson',
-            data: {
-              type: 'FeatureCollection',
-              features: {
-                type: 'Feature',
-                geometry: {
-                  type: 'Point',
-                  coordinates: [location[0], location[1]],
-                },
-                properties: {
-                  storeId: '123',
-                  icon: 'shop',
-                },
-              },
-            },
-          },
-          layout: {
-            'icon-image': '{icon}-15',
-            'icon-size': 1.5,
-            'text-field': '{storeId}',
-            'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-            'text-offset': [0, 0.9],
-            'text-anchor': 'top',
-          },
-        });
+        var marker = new mapboxgl.Marker()
+          .setLngLat([location[0], location[1]])
+          .addTo(map);
       });
     };
 
