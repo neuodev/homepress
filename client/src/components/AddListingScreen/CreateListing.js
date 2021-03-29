@@ -118,14 +118,13 @@ const CreateListing = () => {
           <label className='font-semibold text-sm mb-1' htmlFor='description'>
             Description
           </label>
-          <div className='w-full  border '>
-            <textarea
-              className='w-full focus:outline-none focus:ring-2 focus:ring-blue-500 p-5 '
-              name='description'
-              id='description'
-              cols='30'
-              rows='10'></textarea>
-          </div>
+
+          <textarea
+            className='w-full  h-full focus:outline-none focus:ring-2 focus:ring-blue-500 p-5  bg-gray-100'
+            name='description'
+            id='description'
+            cols='30'
+            rows='10'></textarea>
         </div>
         <div className='grid gap-4 grid-cols-12'>
           <div className='col-span-4'>
