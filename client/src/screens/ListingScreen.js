@@ -17,11 +17,11 @@ const ListingScreen = ({ match }) => {
   return (
     <div className='bg-gray-100'>
       <NavBar title={data && data.property.title} />
-      {true ? (
+      {loading ? (
         <div>
           <ListingSkeleton />
         </div>
-      ) : error ? (
+      ) : true ? (
         <div>error</div>
       ) : (
         <Details property={data.property} />
