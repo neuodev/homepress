@@ -34,7 +34,7 @@ const featuresSchema = new Schema({
   stories: {
     type: String,
     required: [true, 'Stores Is requried'],
-    enum: ['Multi Family', 'Single'],
+    enum: ['Multi Family', 'Single Family'],
     default: 'Single',
   },
   swimmingPool: {
@@ -75,6 +75,10 @@ const PropertySchema = new Schema(
       type: String,
       required: [true, 'Description is required'],
     },
+    address: {
+      type: String,
+      requried: [true, 'Address is required'],
+    },
     location: {
       type: {
         type: String,
@@ -103,9 +107,9 @@ const PropertySchema = new Schema(
       type: Number,
       required: [true, 'Beds Number is required'],
     },
-    Baths: {
+    baths: {
       type: Number,
-      required: [true, 'Beds Number is required'],
+      required: [true, 'baths Number is required'],
     },
     area: {
       type: Number,

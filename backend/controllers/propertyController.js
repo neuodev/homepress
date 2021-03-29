@@ -2,7 +2,7 @@ const Property = require('../models/Property');
 const geocoder = require('../utils/geocoder');
 exports.createProperty = async data => {
   const { address } = data;
-
+  console.log(await geocoder.geocode(address));
   const [loc] = await geocoder.geocode(address);
   const lati = loc.latitude;
   const long = loc.longitude;

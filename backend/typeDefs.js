@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Property {
     id: ID!
+    type: String!
     title: String!
     price: Int!
     discount: Int
@@ -21,10 +22,11 @@ const typeDefs = gql`
     rooms: Int!
     builtYear: Int!
     area: Int!
+    beds: Int!
+    baths: Int!
     priceForSqft: Int!
     features: Features!
     amenities: [String!]!
-    near: Near!
   }
   type Features {
     parking: Boolean
@@ -33,26 +35,11 @@ const typeDefs = gql`
     conferenceHall: Boolean
     heating: Boolean
     cooling: Boolean
-    status: Boolean
-  }
-
-  type Food {
-    name: String!
-    rating: Int!
-  }
-  type Education {
-    name: String!
-    rating: Int!
-  }
-  type homeservices {
-    name: String!
-    rating: Int!
-  }
-
-  type Near {
-    food: [Food]!
-    education: [Education]!
-    homeservices: [homeservices]!
+    status: String
+    stories: String
+    swimmingPool: Int
+    garage: Int
+    builtYear: Int
   }
 
   input createPropertyInput {
@@ -65,28 +52,11 @@ const typeDefs = gql`
     rooms: Int!
     builtYear: Int!
     area: Int!
+    beds: Int!
+    baths: Int!
     priceForSqft: Int!
     features: FeaturesInput!
     amenities: [String!]!
-    near: NearInput!
-  }
-
-  input NearInput {
-    food: [FoodInput]!
-    education: [EducationInput]!
-    homeservices: [homeservicesInput]!
-  }
-  input FoodInput {
-    name: String!
-    rating: Int!
-  }
-  input EducationInput {
-    name: String!
-    rating: Int!
-  }
-  input homeservicesInput {
-    name: String!
-    rating: Int!
   }
 
   input FeaturesInput {
@@ -96,7 +66,11 @@ const typeDefs = gql`
     conferenceHall: Boolean
     heating: Boolean
     cooling: Boolean
-    status: Boolean
+    status: String
+    stories: String
+    swimmingPool: Int
+    garage: Int
+    builtYear: Int
   }
 
   input FilterInput {
@@ -119,7 +93,6 @@ const typeDefs = gql`
     gte: Int
     lte: Int
   }
-  
 `;
 
 module.exports = typeDefs;
