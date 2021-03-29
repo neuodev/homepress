@@ -7,7 +7,6 @@ const ListingScreen = () => {
     <div className='bg-gray-100'>
       <NavBar title='Listing Name' />
       <Details />
-
       <Footer />
     </div>
   );

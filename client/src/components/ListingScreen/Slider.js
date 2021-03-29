@@ -36,7 +36,7 @@ class Slider extends Component {
                   className={`absolute top-0 left-0 w-full  h-full rounded-md  shadow-md object-cover  border ${
                     this.state.aciveSlide ? 'showSlideImg' : 'hideSlideImg'
                   }`}
-                  src={`./images/${img}`}
+                  src={`/images/${img}`}
                   alt='aciveSlide'
                 />
               </div>
@@ -66,7 +66,7 @@ class Slider extends Component {
                   className={`w-20 h-20 object-cover mr-2 mb-2 rounded-md  shadow-md  ${
                     this.state.aciveSlide === idx && 'ring'
                   }  `}
-                  src={`./images/${img}`}
+                  src={`/images/${img}`}
                   alt=''
                 />
               </div>

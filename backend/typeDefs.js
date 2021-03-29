@@ -27,7 +27,14 @@ const typeDefs = gql`
     priceForSqft: Int!
     features: Features!
     amenities: [String!]!
+    location: Location!
   }
+
+  type Location {
+    type: String!
+    coordinates: [String]!
+  }
+
   type Features {
     parking: Boolean
     security: Boolean
@@ -43,7 +50,6 @@ const typeDefs = gql`
   }
 
   input createPropertyInput {
-    
     title: String!
     price: Int!
     discount: Int
