@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import AdvancedSearch from './AdvancedSearch';
-
-// 1 ,2 ,3 ,4
-// 3    7     2  => 12
+import { useDispatch } from 'react-redux';
+import { TITLE } from '../../actions/actionsType';
 
 const types = ['Apartments', 'Offices', 'Townhome', 'Houses', 'Studio'];
-const Search = () => {
+const Search = ({ history }) => {
   const [list, setList] = useState(false);
   const [type, setType] = useState(types[0]);
+  const [title, setTitle] = useState('');
   const [showAdvancedSearch, setShowAdvancedSearch] = useState(true);
   const updateType = type => {
     setType(type);
     setList(false);
   };
-
+  const dispatch = useDispatch();
   const onClick = () => {
-    
+    if (!title) return;
+    dispatch({ type: TITLE, payload: title });
+    history.push('/search');
   };
 
   document.addEventListener('click', e => {
@@ -52,6 +54,8 @@ const Search = () => {
           </ul>
         </div>
         <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
           className='w-full  col-span-12 md:col-span-6 lg:col-span-3 py-3 px-7 shadow-sm border  focus:outline-none focus:ring-2 focus:ring-blue-300   '
           type='text'
           placeholder='Search'

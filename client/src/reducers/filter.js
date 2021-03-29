@@ -17,6 +17,7 @@ export const filter = (state = {}, { type, payload }) => {
         amenities: payload,
       };
     case TITLE:
+    
       return {
         ...state,
         title: payload,

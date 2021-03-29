@@ -7,11 +7,11 @@ import Showcase from '../components/HomeScreen/Showcase';
 import Testimonials from '../components/HomeScreen/Testimonials';
 import Why from '../components/HomeScreen/Why';
 
-const HomeScreen = () => {
+const HomeScreen = ({ history }) => {
   return (
     <div className='bg-gray-50'>
       <Showcase />
-      <Search />
+      <Search history={history} />
       <Properties />
       <Why />
       <Testimonials />
