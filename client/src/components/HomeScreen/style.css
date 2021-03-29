@@ -13,14 +13,18 @@
 }
 
 .show {
-  animation: show 2s ease;
+  height: 111vh;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 
 .hide {
-  height: 0;
   overflow: hidden;
-  animation: hide 1s ease;
-  animation-fill-mode: both;
+  height: 0vh;
+  padding: 0px;
+  transition: all 1s ease;
+  animation: hide 0.001 ease;
+  animation-delay: 1s;
 }
 
 #card-height {
@@ -43,6 +47,18 @@
   opacity: 0;
   transition: opacity 0.1s ease;
 }
+#scroll {
+  overflow: scroll;
+}
+
+#scroll::-webkit-scrollbar {
+  display: none;
+}
+
+#scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 .animate {
   transform: translateY(-20px);
@@ -61,7 +77,7 @@
 }
 #card-height {
   /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), */
-    /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+  /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
   transition: all 0.4s ease;
 }
 #card-height:hover {
@@ -71,6 +87,10 @@
 #height-search-card {
   height: 525px;
 }
+
+/* .search-height {
+  height: 100vh;
+} */
 @media (min-width: 768px) {
   #card-height {
     height: 420px;
@@ -88,15 +108,11 @@
     z-index: 50;
   }
   .show {
-    animation: showLarge 2s ease;
+    height: 57vh;
+    overflow: hidden;
+    transition: all 1s ease;
   }
 
-  .hide {
-    height: 0;
-    overflow: hidden;
-    animation: hideLarge 1s ease;
-    animation-fill-mode: both;
-  }
   #height-search-card {
     height: 325px;
   }
@@ -112,6 +128,11 @@
   #height-search-card {
     height: 590px;
   }
+  .show {
+    height: 53vh;
+    overflow: hidden;
+    transition: all 1s ease;
+  }
 }
 @media (min-width: 970px) {
   #height-search-card {
@@ -121,51 +142,5 @@
 @media (min-width: 1280px) {
   #height-search-card {
     height: 370px;
-  }
-}
-
-@keyframes show {
-  0% {
-    height: 0px;
-    overflow: hidden;
-  }
-
-  100% {
-    height: 850px;
-    overflow: hidden;
-  }
-}
-
-@keyframes showLarge {
-  0% {
-    height: 0px;
-    overflow: hidden;
-  }
-
-  100% {
-    height: 420px;
-    overflow: hidden;
-  }
-}
-@keyframes hide {
-  0% {
-    height: 700px;
-    overflow: hidden;
-  }
-  100% {
-    height: 0px;
-    overflow: hidden;
-    padding: 0;
-  }
-}
-@keyframes hideLarge {
-  0% {
-    height: 420px;
-    overflow: hidden;
-  }
-  100% {
-    height: 0px;
-    padding: 0;
-    overflow: hidden;
   }
 }
