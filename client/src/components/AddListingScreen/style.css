@@ -1,0 +1,13 @@
+#scroll {
+  height: calc(100vh - 120px);
+  overflow: scroll;
+}
+
+#scroll::-webkit-scrollbar {
+  display: none;
+}
+
+#scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

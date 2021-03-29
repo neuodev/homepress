@@ -22,7 +22,10 @@ const Select = ({ item, setItem, show, setShow, list, label }) => {
             aria-hidden='true'></i>
         </div>
         <ul
-          className={`absolute bg-gray-100 w-full py-2  ${!show && 'hidden'}`}>
+          className={`absolute bg-gray-100 w-full py-2  ${
+            !show && 'hidden'
+          } max-h-32 overflow-y-scroll`}
+          id='scroll'>
           {list.map((item, idx) => (
             <li
               onClick={() => updateItem(item)}
