@@ -89,7 +89,7 @@ const typeDefs = gql`
     price: RangeInput
     area: RangeInput
     beds: Int
-    bath: Int
+    baths: Int
     status: String
     title: String
   }

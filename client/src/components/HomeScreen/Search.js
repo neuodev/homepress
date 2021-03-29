@@ -15,7 +15,6 @@ const Search = ({ history }) => {
   };
   const dispatch = useDispatch();
   const onClick = () => {
-    if (!title) return;
     dispatch({ type: TITLE, payload: title });
     history.push('/search');
   };

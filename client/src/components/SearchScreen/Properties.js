@@ -25,27 +25,62 @@ const selectSort = [
 const Properties = () => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
-  const { title } = useSelector(state => state.filter);
+  const {
+    title,
+    status,
+    amenities,
+    countery,
+    price,
+    area,
+    beds,
+    baths,
+  } = useSelector(state => state.filter);
   const updateSelect = sort => {
     setSowList(false);
     setSort(sort);
   };
 
+  let filter = {};
+
+  if (title) {
+    filter.title = title;
+  }
+  if (amenities) {
+    filter.amenities = {
+      in: [...amenities],
+    };
+  }
+  if (countery) {
+    filter.city = countery;
+  }
+
+  
+  if (price) {
+    filter.price = {
+      gte: price[0],
+      lte: price[1],
+    };
+  }
+  if (area) {
+    filter.area = {
+      gte: area[0],
+      lte: area[1],
+    };
+  }
+
+  if (beds) {
+    filter.beds = beds;
+  }
+  if (baths) {
+    filter.baths = baths;
+  }
+  if (status) {
+    filter.status = status;
+  }
+  console.log(filter);
   const { data, loading, error } = useQuery(SEARCH_PROPERTY, {
     variables: {
-      filter: {
-        sort: 'title',
-        page: 1,
-        limit: 20,
-        amenities: { in: ['Gym'] },
-        city: 'valhal',
-        price: { gte: 0, lte: 10000 },
-        area: { gte: 0, lte: 10000 },
-        beds: 5,
-        bath: 6,
-        status: 'Active',
-        title: 'a',
-      },
+      filter,
     },
   });
   console.log(data);
