@@ -38,7 +38,7 @@ class Slider extends Component {
                     this.state.aciveSlide === idx ? 'showSlide' : 'hideSlide'
                   }>
                   <img
-                    className={`absolute top-0 left-0 w-full  h-full rounded-md  shadow-md object-cover  border ${
+                    className={`absolute top-0 left-0 w-full  h-full rounded-mdd  shadow-md object-cover  border ${
                       this.state.aciveSlide ? 'showSlideImg' : 'hideSlideImg'
                     }`}
                     src={`${img}`}
@@ -63,15 +63,15 @@ class Slider extends Component {
                 onClick={() => this.setAciveSlide(idx)}>
                 {idx === this.state.limit && (
                   <div onClick={() => this.setAciveSlide(idx)}>
-                    <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30  text-white text-3xl  flex items-center justify-center z-0 -m-1 rounded-md   '></div>
+                    <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30  text-white text-3xl  flex items-center justify-center z-0 -m-1 rounded-mdd   '></div>
                     <p className='absolute transform -translate-x-1/2  -translate-y-1/2 text-white font-bold text-xl z-50 opacity-100 top-1/2 left-1/2  '>
                       +{[].length - this.state.limit}
                     </p>
                   </div>
                 )}
                 <img
-                  className={`cursor-pointer w-20 h-20 object-cover mr-2 mb-2 rounded-md  shadow-md  ${
-                    this.state.aciveSlide === idx && 'ring'
+                  className={`cursor-pointer w-20 h-20 object-cover mr-2 mb-2 rounded-mdd  shadow-md  ${
+                    this.state.aciveSlide === idx && 'ring-gray-300 ring-4'
                   }  `}
                   src={`${img}`}
                   alt=''
