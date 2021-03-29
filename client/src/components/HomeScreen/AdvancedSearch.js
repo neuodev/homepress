@@ -72,8 +72,14 @@ const AdvancedSearch = ({ children, show }) => {
     setArea(newValue);
     dispatch({ type: AREA, payload: newValue });
   };
-  const amenitiesHandler = amenities => {
-    
+  const amenitiesHandler = item => {
+    const isExist = selectAmenities.find(a => a === item);
+    let amenities;
+    if (isExist) {
+      amenities = selectAmenities.filter(a => a !== item);
+    } else {
+      amenities = [...selectAmenities, item];
+    }
     setAmenities(amenities);
     dispatch({ type: ADD_AMENITIES, payload: amenities });
   };
@@ -106,6 +112,7 @@ const AdvancedSearch = ({ children, show }) => {
             {amenities.map(item => (
               <div className='flex items-center font-medium text-gray-600'>
                 <Checkbox
+                  checked={ isFound(item)}
                   onChange={() => amenitiesHandler(item)}
                   value={item}
                   disableRipple
