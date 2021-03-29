@@ -54,8 +54,8 @@ export const GET_PROPERTY_DETAILS = gql`
 `;
 
 export const SEARCH_PROPERTY = gql`
-  query($gte: Int, $lte: Int) {
-    properties(filter: { price: { gte: $gte, lte: $lte } }) {
+  query($filter: FilterInput!) {
+    properties(filter: $filter) {
       id
       title
       beds

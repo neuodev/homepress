@@ -33,8 +33,19 @@ const Properties = () => {
 
   const { data, loading, error } = useQuery(SEARCH_PROPERTY, {
     variables: {
-      gte: 20,
-      lte: 3000,
+      filter: {
+        sort: 'title',
+        page: 1,
+        limit: 20,
+        amenities: { in: ['Gym'] },
+        city: 'valhal',
+        price: { gte: 0, lte: 10000 },
+        area: { gte: 0, lte: 10000 },
+        beds: 5,
+        bath: 6,
+        status: 'Active',
+        title: 'a',
+      },
     },
   });
   console.log(data);
