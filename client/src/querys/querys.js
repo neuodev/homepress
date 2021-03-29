@@ -19,7 +19,7 @@ export const GET_PROPERTY = gql`
 `;
 
 export const GET_PROPERTY_DETAILS = gql`
-  query ($id: ID!) {
+  query($id: ID!) {
     property(id: $id) {
       title
       beds
@@ -49,6 +49,24 @@ export const GET_PROPERTY_DETAILS = gql`
         builtYear
       }
       amenities
+    }
+  }
+`;
+
+export const SEARCH_PROPERTY = gql`
+  query($gte: Int, $lte: Int) {
+    properties(filter: { price: { gte: $gte, lte: $lte } }) {
+      id
+      title
+      beds
+      baths
+      area
+      features {
+        builtYear
+      }
+      price
+      discount
+      images
     }
   }
 `;

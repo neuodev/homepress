@@ -1,4 +1,7 @@
+import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
+import { SEARCH_PROPERTY } from '../../querys/querys';
+import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
 
 const selectSort = [
@@ -21,12 +24,20 @@ const selectSort = [
 
 const Properties = () => {
   const [sort, setSort] = useState(selectSort[0]);
-  const [showList, setSowList] = useState(true);
+  const [showList, setSowList] = useState(false);
 
   const updateSelect = sort => {
     setSowList(false);
     setSort(sort);
   };
+
+  const { data, loading, error } = useQuery(SEARCH_PROPERTY, {
+    variables: {
+      gte: 20,
+      lte: 3000,
+    },
+  });
+  console.log(data);
 
   document.addEventListener('click', e => {
     if (!e.target.closest('#sort-list')) {
@@ -41,10 +52,11 @@ const Properties = () => {
             Apartments
           </h1>
           <p className='mb-4 lg:text-left'>
-            <span className='font-bold'>4</span> results
+            <span className='font-bold'>{data && data.properties.length}</span>{' '}
+            results
           </p>
         </div>
-        <div className='relative'>
+        <div className='relative cursor-pointer'>
           <div
             id='sort-list'
             onClick={() => setSowList(!showList)}
@@ -58,7 +70,7 @@ const Properties = () => {
               aria-hidden='true'></i>
           </div>
           {showList && (
-            <div className='absolute left-0 top-12 bg-gray-50 w-full  py-3 text-left'>
+            <div className='absolute left-0 top-12 bg-gray-50 w-full  py-3 text-left shadow-md'>
               {selectSort.map((item, idx) => (
                 <div
                   onClick={() => updateSelect(item)}
@@ -71,10 +83,17 @@ const Properties = () => {
           )}
         </div>
       </div>
-      <PropertySearchCard />
-      <PropertySearchCard />
-      <PropertySearchCard />
-      <PropertySearchCard />
+      <div>
+        {loading ? (
+          <div>Loading</div>
+        ) : error ? (
+          <Alert serverity='error' message={error} />
+        ) : (
+          data.properties.map(property => (
+            <PropertySearchCard key={property.id} />
+          ))
+        )}
+      </div>
     </div>
   );
 };
