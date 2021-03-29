@@ -17,3 +17,38 @@ export const GET_PROPERTY = gql`
     }
   }
 `;
+
+export const GET_PROPERTY_DETAILS = gql`
+  query  {
+    property(id: "606175707139ca1918ec5997") {
+      title
+      beds
+      baths
+      area
+      price
+      discount
+      images
+      description
+      address
+      location {
+        type
+        coordinates
+      }
+
+      features {
+        parking
+        security
+        cctv
+        conferenceHall
+        heating
+        cooling
+        status
+        stories
+        swimmingPool
+        garage
+        builtYear
+      }
+      amenities
+    }
+  }
+`;
