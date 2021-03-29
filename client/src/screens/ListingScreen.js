@@ -4,6 +4,7 @@ import NavBar from '../components/ListingScreen/NavBar';
 import Footer from '../components/HomeScreen/Footer';
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTY_DETAILS } from '../querys/querys';
+import ListingSkeleton from '../components/ListingScreen/ListingSkeleton';
 const ListingScreen = ({ match }) => {
   const id = match.params.id;
   const { data, error, loading } = useQuery(GET_PROPERTY_DETAILS, {
@@ -15,9 +16,11 @@ const ListingScreen = ({ match }) => {
 
   return (
     <div className='bg-gray-100'>
-      <NavBar title='Listing Name' />
-      {loading ? (
-        <div>Loading</div>
+      <NavBar title={data && data.property.title} />
+      {true ? (
+        <div>
+          <ListingSkeleton />
+        </div>
       ) : error ? (
         <div>error</div>
       ) : (
