@@ -4,12 +4,18 @@
 #grid-h {
   height: 500px;
 }
+#map-height {
+  height: 300px;
+}
 @media (min-width: 768px) {
   .slider-height-listing {
     height: 350px;
   }
   #grid-h {
     height: calc(100vh - 120px);
+  }
+  #map-height {
+    height: 400px;
   }
 }
 @media (min-width: 1024px) {
@@ -20,23 +26,24 @@
     height: calc(100vh - 120px);
     overflow: scroll;
   }
+  #map-height {
+    height: 600px;
+  }
 
   #pro-h::-webkit-scrollbar {
     display: none;
   }
-  
 
   #pro-h {
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-
 }
 @keyframes showSlideImg {
   0% {
     opacity: 0;
   }
-  
+
   100% {
     opacity: 1;
   }

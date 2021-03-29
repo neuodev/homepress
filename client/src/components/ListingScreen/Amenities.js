@@ -1,20 +1,6 @@
 import React from 'react';
 
-const amenities = [
-  'Basement',
-  'Car garage',
-  'Central Heating ',
-  'Cleaning Service',
-  'Doorman',
-  'Elevator ',
-  ' Fireplace  ',
-  'Hardwood Flows ',
-  'Onsite Parking',
-  'Stunning views ',
-  'Stunning views ',
-  'Unit Washer/Dryer ',
-];
-const Amenities = () => {
+const Amenities = ({ amenities }) => {
   return (
     <div className='container  mx-auto max-w-screen-lg border-t py-8 px-5 md:px-6'>
       <h1 className='text-2xl mb-4 font-semibold '>Apartments Amenities</h1>

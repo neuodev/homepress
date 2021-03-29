@@ -14,7 +14,7 @@ const Location = ({ location, address }) => {
             <p>{address}</p>
           </div>
         </div>
-        <div className='w-full h-96 bg-blue-300 mt-7'>
+        <div className='w-full bg-blue-300 mt-7' id='map-height'>
           <Map location={location} />
         </div>
       </div>
