@@ -10,11 +10,11 @@ const Form = () => {
   const [emailAlert, setEmailAlert] = useState('');
   const [phoneAlert, setPhoneAlert] = useState('');
   const [messageAlert, setMessageAlert] = useState('');
-
+  const [successAlert, setSuccessAlert] = useState(false);
   const onSubmit = e => {
     e.preventDefault();
 
-    validate(
+    const isValid = validate(
       name,
       email,
       phone,
@@ -24,6 +24,8 @@ const Form = () => {
       setPhoneAlert,
       setMessageAlert
     );
+
+    if (!isValid) return;
   };
 
   return (
@@ -50,12 +52,12 @@ const Form = () => {
               onChange={e => setName(e.target.value)}
               className='w-full bg-gray-200 py-2 px-3 focus:outline-none'
               type='text'
-              placeholder='First Name, Last Name'
+              placeholder='First Name, Last Name*'
             />
           </div>
           {nameAlert && (
             <p className='text-red-400 text-sm font-semibold mt-0.5'>
-              this field is requied
+              {nameAlert}
             </p>
           )}
         </div>
@@ -72,7 +74,7 @@ const Form = () => {
           </div>
           {emailAlert && (
             <p className='text-red-400 text-sm font-semibold mt-0.5'>
-              this field is requied
+              {emailAlert}
             </p>
           )}
         </div>
@@ -84,12 +86,12 @@ const Form = () => {
               onChange={e => setPhone(e.target.value)}
               className='w-full bg-gray-200 py-2 px-3 focus:outline-none'
               type='text'
-              placeholder='Your Phone'
+              placeholder='Your Phone ( ###-###-#### )'
             />
           </div>
           {phoneAlert && (
             <p className='text-red-400 text-sm font-semibold mt-0.5'>
-              this field is requied
+              {phoneAlert}
             </p>
           )}
         </div>
@@ -104,7 +106,7 @@ const Form = () => {
           </div>
           {messageAlert && (
             <p className='text-red-400 text-sm font-semibold mt-0.5'>
-              this field is requied
+              {messageAlert}
             </p>
           )}
         </div>
