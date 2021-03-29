@@ -30,7 +30,7 @@ function App() {
             <Route path='/' exact component={HomeScreen} />
             <Route path='/listing' exact component={ListingScreen} />
             <Route path='/search' exact component={SearchScreen} />
-            <Route path='/addListing'  component={AddListingScreen} />
+            <Route path='/addListing' component={AddListingScreen} />
           </Switch>
         </ThemeProvider>
       </Router>

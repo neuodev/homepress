@@ -9,8 +9,8 @@ const NavBar = ({ title }) => {
             <img
               class='bg-gray-500'
               className='mb-4'
-              src='./images/logo-dark.svg'
-              alt=''
+              src='/images/logo-dark.svg'
+              alt='homepress'
             />
             <div className='flex items-center justify-center space-x-3 '>
               <button className='border  px-3 py-2 rounded-full focus:outline-black  hover:text-white hover:bg-blue-500 transition-colors duration-300 '>

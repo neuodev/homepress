@@ -15,16 +15,26 @@ const steps = [
   },
 ];
 
-const Steps = () => {
+const Steps = ({ activeStep }) => {
   return (
-    <div>
-      <div>
-        <h1>Add New Property</h1>
+    <div className='mt-16 container mx-auto max-w-screen-lg '>
+      <div className='text-center mb-10'>
+        <h1 className='text-5xl font-bold text-gray-700'>Add New Property</h1>
       </div>
-      <div>
-        {steps.map(step => (
-          <div key={step.stepNumber}>
-            <h1>{step.heading}</h1>
+      <div className='flex items-center justify-between'>
+        {steps.map(({ heading, stepNumber }) => (
+          <div
+            className={`${
+              activeStep == stepNumber && 'border-blue-400'
+            } border-b-4 w-full mr-4 py-3 text-xl text flex items-center font-semibold text-gray-700 '`}
+            key={stepNumber}>
+            <p
+              className={`${
+                activeStep == stepNumber && 'bg-blue-400 text-white'
+              } px-2 rounded-full bg-gray-300 mr-3 `}>
+              {stepNumber}
+            </p>
+            <h1>{heading}</h1>
           </div>
         ))}
       </div>
