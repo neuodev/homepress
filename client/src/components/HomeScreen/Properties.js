@@ -7,6 +7,7 @@ import {
   GET_HOME_PROPERTY_FAIL,
   GET_HOME_PROPERTY_SUCCESS,
 } from '../../actions/actionsType';
+import PropertySkeleton from './PropertySkeleton';
 const Properties = () => {
   const dispatch = useDispatch();
 
@@ -30,9 +31,14 @@ const Properties = () => {
 
       <div className='grid grid-cols-12 gap-5 px-3 my-10 max-w-screen-xl mx-auto'>
         {loading ? (
-          <div>
-            <h1>loading</h1>
-          </div>
+          <>
+            <PropertySkeleton />
+            <PropertySkeleton />
+            <PropertySkeleton />
+            <PropertySkeleton />
+            <PropertySkeleton />
+            <PropertySkeleton />
+          </>
         ) : error ? (
           <div>error</div>
         ) : (
