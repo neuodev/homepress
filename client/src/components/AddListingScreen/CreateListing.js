@@ -30,26 +30,36 @@ const CreateListing = () => {
             type='text'
           />
         </div>
-        <div className='flex items-center justify-between'>
-          <Select
-            show={showCategory}
-            setShow={setShowCategory}
-            item={category}
-            setItem={setCagegory}
-            label='Category'
-            list={selectCategory}
-          />
-          <div>
-            <label className='font-semibold mb-1' htmlFor='region'>
-              Region
-            </label>
-            <p>Select</p>
+        <div className='grid gap-5 grid-cols-12'>
+          <div className='col-span-4'>
+            <Select
+              show={showCategory}
+              setShow={setShowCategory}
+              item={category}
+              setItem={setCagegory}
+              label='Category'
+              list={selectCategory}
+            />
           </div>
-          <div>
-            <label className='font-semibold mb-1' htmlFor='stores'>
-              Stores
-            </label>
-            <p>Select</p>
+          <div className='col-span-4'>
+            <Select
+              show={showCategory}
+              setShow={setShowCategory}
+              item={category}
+              setItem={setCagegory}
+              label='Category'
+              list={selectCategory}
+            />
+          </div>
+          <div className='col-span-4'>
+            <Select
+              show={showCategory}
+              setShow={setShowCategory}
+              item={category}
+              setItem={setCagegory}
+              label='Category'
+              list={selectCategory}
+            />
           </div>
         </div>
         <div>
