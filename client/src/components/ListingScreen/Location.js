@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Map from './Map';
 
 const Location = ({ location, address }) => {
-  
   return (
     <div>
       <div className='container mx-auto max-w-screen-lg p-5 pt-7'>
@@ -16,7 +15,7 @@ const Location = ({ location, address }) => {
           </div>
         </div>
         <div className='w-full h-96 bg-blue-300 mt-7'>
-          {/* <Map /> */}
+          <Map location={location} />
         </div>
       </div>
     </div>
