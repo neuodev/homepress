@@ -47,7 +47,7 @@ const PropertySchema = new Schema({
   type: {
     type: String,
     requried: [true, 'Property type is requried'],
-    enum: ['Apartments', 'Offices', 'Townhome', 'Studio'],
+    enum: ['Apartments', 'Offices', 'Houses', 'Townhome', 'Studio'],
   },
   title: {
     type: String,
