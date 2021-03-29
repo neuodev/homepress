@@ -43,6 +43,7 @@ const typeDefs = gql`
   }
 
   input createPropertyInput {
+    
     title: String!
     price: Int!
     discount: Int
