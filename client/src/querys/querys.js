@@ -19,8 +19,8 @@ export const GET_PROPERTY = gql`
 `;
 
 export const GET_PROPERTY_DETAILS = gql`
-  query  {
-    property(id: "606175707139ca1918ec5997") {
+  query ($id: ID!) {
+    property(id: $id) {
       title
       beds
       baths
