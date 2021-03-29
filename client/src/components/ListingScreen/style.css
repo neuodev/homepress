@@ -14,7 +14,7 @@
 }
 @media (min-width: 1024px) {
   .slider-height-listing {
-    height: 450px;
+    height: 500px;
   }
   #pro-h {
     height: calc(100vh - 120px);

@@ -1,6 +1,7 @@
 import React from 'react';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Location = () => {
+const Location = ({ location, address }) => {
   return (
     <div>
       <div className='container mx-auto max-w-screen-lg p-5 pt-7'>
@@ -10,7 +11,7 @@ const Location = () => {
             <i
               class='fa fa-map-marker text-blue-500  mr-2'
               aria-hidden='true'></i>
-            <p>392 S Hill Dr, Brisbane, CA 94005, USA</p>
+            <p>{address}</p>
           </div>
         </div>
         <div className='w-full h-96 bg-blue-300 mt-7'></div>
