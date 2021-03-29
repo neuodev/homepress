@@ -4,6 +4,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ListingScreen from './screens/ListingScreen';
 import SearchScreen from './screens/SearchScreen';
+import AddListingScreen from './screens/AddListingScreen';
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/' exact component={HomeScreen} />
             <Route path='/listing' exact component={ListingScreen} />
             <Route path='/search' exact component={SearchScreen} />
+            <Route path='/addListing'  component={AddListingScreen} />
           </Switch>
         </ThemeProvider>
       </Router>
