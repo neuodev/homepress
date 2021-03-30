@@ -2,15 +2,14 @@ export const getLocations = properties => {
   const features = [];
   for (let i = 0; i < properties.length; i++) {
     let property = properties[i];
-    console.log(property);
+    const location = {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: property.location.coordinates,
+      },
+    };
+    features.push(location);
   }
-  // [
-  //     {
-  //       type: 'Feature',
-  //       geometry: {
-  //         type: 'Point',
-  //         coordinates: [0, 0],
-  //       },
-  //     },
-  //   ],
+  return features;
 };

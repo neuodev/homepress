@@ -100,10 +100,15 @@ const Properties = () => {
           <Alert serverity='error' message={error} />
         ) : (
           data.properties.map(property => {
+            const features = getLocations(data.properties);
 
-            const features = getLocations(data.properties)
-
-            return <PropertySearchCard property={property} key={property.id} />;
+            return (
+              <PropertySearchCard
+                property={property}
+                key={property.id}
+                features={features}
+              />
+            );
           })
         )}
       </div>
