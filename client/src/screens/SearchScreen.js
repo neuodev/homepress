@@ -25,12 +25,14 @@ const SearchScreen = ({ history }) => {
     <div className='h-screen'>
       <NavBar title={advancedFilter.title ? advancedFilter.title : 'Search'} />
       <Filter />
-      {true ? (
+      {loading ? (
         <div>
           <SearchSkeleton />
         </div>
       ) : error ? (
-        <Alert serverity='error' message={error.message} />
+        <div className='px-3'>
+          <Alert serverity='error' message={error.message} />
+        </div>
       ) : (
         data && (
           <div className='grid grid-cols-12 '>
