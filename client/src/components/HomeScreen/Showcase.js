@@ -13,12 +13,12 @@ const Showcase = ({ history }) => {
   };
   return (
     <div
-      className='w-full h-72 showcase relative flex items-center '
+      className='w-full h-72 showcase  flex items-center flex-col '
       style={{
         background: 'url(./images/showcase.jpg) no-repeat center center/cover ',
       }}
       id='overlay-showcase'>
-      <div className='p-5 absolute z-10 w-full top-24 sm:top-0   '>
+      <div className='p-5 absoluted z-10 w-full top-24 sm:top-0   '>
         <div className=' flex items-center justify-between container mx-auto'>
           <Link to='/'>
             <img
@@ -44,7 +44,7 @@ const Showcase = ({ history }) => {
           </div>
         </div>
       </div>
-      <div className=' container mx-auto   hidden md:block px-5'>
+      <div className=' container mx-auto mt-40   hidden md:block px-5'>
         <p className='text-blue-500 text-xl'>PASADENA REALTOR & BROKER</p>
         <h1 className='text-4xl max-w-sm lg:text-6xl  lg:max-w-xl  font-extrabold text-gray-800 '>
           Making Good things happen.
