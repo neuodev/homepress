@@ -50,10 +50,10 @@ const Properties = () => {
   });
 
   useEffect(() => {
-    console.log('+1');
     if (data) {
       const features = getLocations(data.properties);
       dispatch({ type: GET_LOCATIONS, payload: features });
+      
     }
   }, [data]);
 
