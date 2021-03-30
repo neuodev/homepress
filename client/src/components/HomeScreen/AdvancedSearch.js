@@ -6,7 +6,7 @@ import {
   AREA,
   BATHS,
   BEDS,
-  COUNTERY,
+  CITY,
   PRICE,
   RESET_FILTER,
   STATUS,
@@ -49,7 +49,7 @@ const AdvancedSearch = ({ children, show }) => {
   const updateCity = city => {
     setCity(city);
     setShowlist(false);
-    dispatch({ type: COUNTERY, payload: city });
+    dispatch({ type: CITY, payload: city });
   };
   const updateBath = bath => {
     setBathRoom(bath);

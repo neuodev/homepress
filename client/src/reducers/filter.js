@@ -3,7 +3,7 @@ import {
   AREA,
   BATHS,
   BEDS,
-  COUNTERY,
+  CITY,
   PRICE,
   RESET_FILTER,
   STATUS,
@@ -23,7 +23,7 @@ export const filter = (state = {}, { type, payload }) => {
         title: payload,
       };
 
-    case COUNTERY:
+    case CITY:
       return {
         ...state,
         city: payload,
