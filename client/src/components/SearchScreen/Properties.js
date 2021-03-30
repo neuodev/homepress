@@ -8,18 +8,23 @@ import { pipeline } from '../utils/pipeline';
 const selectSort = [
   {
     text: 'Newset',
+    value: '-createdAt',
   },
   {
     text: 'Price (Lo-Hi)',
+    value: 'price',
   },
   {
     text: 'Price(Hi-Low)',
+    value: '-price',
   },
   {
     text: 'Lowest sqFt',
+    value: 'area',
   },
   {
     text: 'Largest SqFt',
+    value: '-area',
   },
 ];
 
