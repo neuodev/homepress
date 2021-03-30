@@ -70,7 +70,7 @@ const Search = ({ history }) => {
         <div className='flex items-center justify-center  lg:mt-0  col-span-12 md:col-span-6 lg:col-span-3'>
           <button
             onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
-            className='md:w-full text-center w-full h-full   border-2 focus:outline-none flex items-center justify-center  border-blue-400 text-blue-400 font-semibold  space-x-2'>
+            className='md:w-full text-center w-full h-full py-3  border-2 focus:outline-none flex items-center justify-center  border-blue-400 text-blue-400 font-semibold  space-x-2'>
             <p> Advanced Search</p>{' '}
             <i class='fa fa-chevron-down' aria-hidden='true'></i>
           </button>

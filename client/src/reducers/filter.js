@@ -26,7 +26,7 @@ export const filter = (state = {}, { type, payload }) => {
     case COUNTERY:
       return {
         ...state,
-        countery: payload,
+        city: payload,
       };
 
     case PRICE:

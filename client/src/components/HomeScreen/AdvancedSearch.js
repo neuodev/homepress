@@ -1,6 +1,6 @@
 import { Checkbox, Slider } from '@material-ui/core';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   ADD_AMENITIES,
   AREA,
@@ -8,6 +8,7 @@ import {
   BEDS,
   COUNTERY,
   PRICE,
+  RESET_FILTER,
   STATUS,
 } from '../../actions/actionsType';
 const amenities = [
@@ -32,7 +33,8 @@ const cities = [
 ];
 
 const AdvancedSearch = ({ children, show }) => {
-  const [city, setCity] = useState(cities[0]);
+  const filter = useSelector(state => state.filter);
+  const [city, setCity] = useState(filter.city);
   const [showList, setShowlist] = useState(false);
   const [price, setPrice] = React.useState([345, 880000]);
   const [area, setArea] = React.useState([1478, 34000]);
@@ -89,6 +91,10 @@ const AdvancedSearch = ({ children, show }) => {
     return found;
   };
 
+  const resetFilter = () => {
+    dispatch({ type: RESET_FILTER });
+  };
+
   document.addEventListener('click', e => {
     if (!e.target.closest('.filter-list')) {
       setShowBath(false);
@@ -112,7 +118,7 @@ const AdvancedSearch = ({ children, show }) => {
             {amenities.map(item => (
               <div className='flex items-center font-medium text-gray-600'>
                 <Checkbox
-                  checked={ isFound(item)}
+                  checked={isFound(item)}
                   onChange={() => amenitiesHandler(item)}
                   value={item}
                   disableRipple
@@ -251,8 +257,8 @@ const AdvancedSearch = ({ children, show }) => {
               </ul>
             </div>
             {/* Status */}
-            <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5 filter-list '>
-              <p className='w-full mb-1 text-xs font-medium'>Status</p>
+            <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5 filter-list cursor-pointer'>
+              <p className='w-full mb-1 text-xs font-semibold '>Status</p>
               <p
                 onClick={() => setShowStatus(!showStatus)}
                 className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
@@ -276,6 +282,13 @@ const AdvancedSearch = ({ children, show }) => {
                   </li>
                 ))}
               </ul>
+            </div>
+            <div className=' md:col-span-12  lg:col-start-9 lg:col-end-13'>
+              <button
+                onClick={resetFilter}
+                className='border w-full h-full py-3 px-6 font-semibold uppercase tracking-wider  border-blue-500 hover:bg-blue-100 text-blue-500  focus:outline-none focus:ring transition-colors duration-300'>
+                Reset
+              </button>
             </div>
           </div>
         </div>
