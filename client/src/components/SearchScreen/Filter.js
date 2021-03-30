@@ -35,9 +35,9 @@ const Filter = () => {
     setArea(value);
   };
   return (
-    <div className='mt-5 mx-2'>
+    <div className='bg-gray-50 shadow-lg w-full flex items-center justify-center'>
       <button
-        className='text-center bg-gray-100  py-2 w-full  focus:outline-none focus:ring focus:ring-gray-300 shadow-lg rounded-md'
+        className='text-center  border-t  py-2 w-full  focus:outline-none  container max-w-screen-lg mx-auto'
         onClick={() => setOpen(!open)}>
         <i class='far fa-filter    '></i>
         Filter

@@ -82,12 +82,15 @@
   transition: all 0.6s ease;
 }
 #height-search-card {
-  height: 525px;
+  height: 450px;
 }
 
-/* .search-height {
-  height: 100vh;
-} */
+@media (min-width: 640px) {
+  #height-search-card {
+    height: 229px;
+  }
+}
+
 @media (min-width: 768px) {
   #card-height {
     height: 420px;
@@ -111,7 +114,14 @@
   }
 
   #height-search-card {
-    height: 325px;
+    height: 240px;
+  }
+}
+
+/* lg screen */
+@media (min-width: 1024px) {
+  #height-search-card {
+    height: 450px;
   }
 }
 
@@ -123,7 +133,7 @@
     height: 80vh;
   }
   #height-search-card {
-    height: 590px;
+    height: 100vh;
   }
   .show {
     height: 53vh;
@@ -131,13 +141,9 @@
     transition: all 1s ease;
   }
 }
-@media (min-width: 970px) {
-  #height-search-card {
-    height: 620px;
-  }
-}
+
 @media (min-width: 1280px) {
   #height-search-card {
-    height: 370px;
+    height: 240px;
   }
 }

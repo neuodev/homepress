@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { pipeline } from '../utils/pipeline';
 import { GET_LOCATIONS, SORT } from '../../actions/actionsType';
 import { getLocations } from '../../utils/getLocations';
+import { searchPropertiesAction } from '../../actions/properties';
 const selectSort = [
   {
     text: 'Newset',
@@ -30,10 +31,10 @@ const selectSort = [
   },
 ];
 
-const Properties = () => {
+const Properties = ({ properties }) => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
-  const advancedFilter = useSelector(state => state.filter);
+
   const dispatch = useDispatch();
   const updateSelect = sort => {
     setSowList(false);
@@ -41,35 +42,20 @@ const Properties = () => {
     dispatch({ type: SORT, payload: sort.value });
   };
 
-  const filterPipeline = pipeline(advancedFilter);
-
-  const { data, loading, error } = useQuery(SEARCH_PROPERTY, {
-    variables: {
-      filter: filterPipeline,
-    },
-  });
-
-  useEffect(() => {
-    if (data) {
-  
-    }
-  }, [data]);
-
   document.addEventListener('click', e => {
     if (!e.target.closest('#sort-list')) {
       setSowList(false);
     }
   });
   return (
-    <div className='col-span-12   lg:col-span-6 px-5 py-10 lg:pt-2' id='pro-h'>
-      <div className='mb-5 text-center flex  flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start '>
+    <div className='col-span-12   lg:col-span-6 px-3 py-4 shadow-xl' id='pro-h'>
+      <div className='mb-5  text-center flex  flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start '>
         <div>
           <h1 className='text-3xl font-semibold text-gray-700 mb-4 lg:mb-1'>
             Apartments
           </h1>
           <p className='mb-4 lg:text-left'>
-            <span className='font-bold'>{data && data.properties.length}</span>{' '}
-            results
+            <span className='font-bold'>{properties.length}</span> results
           </p>
         </div>
         <div className='relative cursor-pointer'>
@@ -100,23 +86,9 @@ const Properties = () => {
         </div>
       </div>
       <div>
-        {loading ? (
-          <div>Loading</div>
-        ) : error ? (
-          <Alert serverity='error' message={error} />
-        ) : (
-          data.properties.map(property => {
-            const features = getLocations(data.properties);
-
-            return (
-              <PropertySearchCard
-                property={property}
-                key={property.id}
-                features={features}
-              />
-            );
-          })
-        )}
+        {properties.map(property => {
+          return <PropertySearchCard property={property} key={property.id} />;
+        })}
       </div>
     </div>
   );

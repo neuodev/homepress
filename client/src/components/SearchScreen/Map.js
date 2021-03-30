@@ -2,13 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useSelector } from 'react-redux';
-const MapboxGLMap = ({ location }) => {
-  const locations = useSelector(state => state.locations);
+import { getLocations } from '../../utils/getLocations';
+const MapboxGLMap = ({ properties }) => {
+  const locations = getLocations(properties);
   console.log(locations);
-  location =
-    locations && locations.length > 0
-      ? locations[0].geometry.coordinates
-      : [-72.880468, 41.323331];
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
 
@@ -19,15 +16,14 @@ const MapboxGLMap = ({ location }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-        center: [0, 0],
-        zoom: 10,
+        center:
+          properties.length > 0
+            ? properties[0].location.coordinates
+            : [-72.880468, 41.323331],
+        zoom: 11,
       });
 
       map.on('load', () => {
-        let marker = new mapboxgl.Marker()
-          .setLngLat([-72.880468, 41.323331])
-          .addTo(map);
-
         setMap(map);
         map.resize();
 
@@ -66,9 +62,11 @@ const MapboxGLMap = ({ location }) => {
   }, [map, locations]);
 
   return (
-    <div className='col-span-12 px-5  lg:col-span-6 lg:px-0 ' id='map-height'>
+    <div
+      className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 '
+      id='map-height'>
       <div
-        className=' absoluted dtop-0 dleft-0  w-full h-full'
+        className=' absoluted dtop-0 dleft-0  shadow-inner w-full h-full'
         ref={el => (mapContainer.current = el)}
       />
     </div>
