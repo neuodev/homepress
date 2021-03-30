@@ -9,51 +9,65 @@ import {
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ADD_AMENITIES } from '../../actions/actionsType';
+import {
+  ADD_AMENITIES,
+  AREA,
+  BATHS,
+  BEDS,
+  PRICE,
+  RESET_FILTER,
+} from '../../actions/actionsType';
 
 const amenities = [
-  'Balcony ',
+  'Balcony',
   'Basement',
   'Car garage',
   'Central Heating',
   'Cleaning Service',
-  'Dining Room ',
-  'Dishwasher ',
-  'Doorman ',
+  'Dining Room',
+  'Dishwasher',
+  'Doorman',
   'Elevator',
-  'Family Room ',
-  'Fireplace ',
-  'Gym ',
+  'Family Room',
+  'Fireplace',
+  'Gym',
   'Hardwood Flows',
-  'Onsite Parking ',
-  'Parking ',
-  'Pets Allowed ',
-  'Spa ',
-  'Stunning views ',
-  'Unit Washer/Dryer ',
-  'Waterfront ',
+  'Onsite Parking',
+  'Parking',
+  'Pets Allowed',
+  'Spa',
+  'Stunning views',
+  'Unit Washer/Dryer',
+  'Waterfront',
 ];
 
 const Filter = ({ history }) => {
+  const filter = useSelector(state => state.filter);
   const [open, setOpen] = useState(false);
-  const [price, setPrice] = useState([100, 10000]);
-  const [area, setArea] = useState([1000, 5000]);
+  const [price, setPrice] = useState(
+    filter.price ? filter.price : [1000, 10000]
+  );
+  const [area, setArea] = useState(filter.area ? filter.area : [1000, 5000]);
   const [beds, setBeds] = useState(1);
   const [baths, setBaths] = useState(1);
   const [selectAmenities, setAmenities] = useState([]);
   const dispatch = useDispatch();
   const priceHandler = (e, value) => {
     setPrice(value);
+    dispatch({ type: PRICE, payload: value });
   };
   const areaHandler = (e, value) => {
     setArea(value);
+    dispatch({ type: AREA, payload: value });
   };
 
   const handlerBedsChange = e => {
     setBeds(Number(e.target.value));
+    dispatch({ type: BEDS, payload: Number(e.target.value) });
   };
   const handlerBathsChange = e => {
     setBaths(Number(e.target.value));
+    dispatch({ type: BATHS, payload: Number(e.target.value) });
   };
   const amenitiesHandler = item => {
     const isExist = selectAmenities.find(a => a === item);
@@ -72,8 +86,12 @@ const Filter = ({ history }) => {
     return found;
   };
 
-  const applyFilter = () => {
-    history.push('/search');
+  const resetFilter = () => {
+    dispatch({ type: RESET_FILTER });
+    setArea([1000, 5000]);
+    setPrice([1000, 10000]);
+    setBaths(false);
+    setBeds(false);
   };
 
   return (
@@ -86,13 +104,15 @@ const Filter = ({ history }) => {
       </button>
 
       <SwipeableDrawer onClose={() => setOpen(false)} open={open}>
-        <div className='w-96 py-8'>
-          <button
-            className='text-center bg-green-100 text-green-800 font-semibold   py-2 w-full  focus:outline-none focus:ring focus:ring-gray-300 mb-5'
-            onClick={() => setOpen(!open)}>
-            <i class='fad fa-filter  mr-2 '></i>
-            Get Results
-          </button>
+        <div className='w-96 pb-8 relative'>
+          <div className='px-2 mt-2 '>
+            <button
+              className='text-center border border-red-500  hover:bg-red-100 text-red-600 font-semibold   py-4 w-full  focus:outline-none focus:ring focus:ring-gray-300 mb-5 '
+              onClick={() => resetFilter()}>
+              <i class='fas fa-undo-alt mr-2 '></i>
+              Reset Filter
+            </button>
+          </div>
           <div className=' px-5 border-b  '>
             <h1 className='text-lg font-semibold text-blue-600 text-center  mb-3 '>
               Price ${price[0]} - ${price[1]}
