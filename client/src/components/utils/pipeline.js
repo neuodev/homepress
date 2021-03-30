@@ -8,8 +8,9 @@ export const pipeline = filterValues => {
     area,
     beds,
     baths,
+    sort,
   } = filterValues;
-  
+
   let filter = {};
   if (title) {
     filter.title = title;
@@ -45,6 +46,8 @@ export const pipeline = filterValues => {
   if (status) {
     filter.status = status;
   }
-
+  if (sort) {
+    filter.sort = sort;
+  }
   return filter;
 };
