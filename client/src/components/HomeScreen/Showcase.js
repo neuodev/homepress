@@ -17,8 +17,8 @@ const Showcase = ({ history }) => {
       style={{
         background: 'url(./images/showcase.jpg) no-repeat center center/cover ',
       }}
-      id='overlay-showcase'>
-      <div className='p-5 absolute z-10 w-full top-24 sm:top-0   '>
+      id='overlay-showcased'>
+      <div className='p-5 absolute z-10 w-full top-0 sm:top-0   '>
         <div className=' flex items-center justify-between container mx-auto'>
           <Link to='/'>
             <img
