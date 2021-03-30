@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { RESET_FILTER } from '../../actions/actionsType';
 import { useDispatch } from 'react-redux';
 import './style.css';
+import Favorite from '../Favorite/Favorite';
 
 const Showcase = ({ history }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Showcase = ({ history }) => {
       style={{
         background: 'url(./images/showcase.jpg) no-repeat center center/cover ',
       }}
-      id='overlayd'>
+      id='overlay-showcase'>
       <div className='p-5 absolute z-10 w-full top-0   '>
         <div className=' md:flex items-center justify-between container mx-auto'>
           <Link to='/'>
@@ -29,13 +30,15 @@ const Showcase = ({ history }) => {
           <div className='flex items-center justify-center space-x-3 mt-16 md:mt-0'>
             <Link
               to='/addListing'
-              className='border border-gray-600 text-gray-700 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-gray-300  font-semibold '>
+              className='border border-blue-600 text-blue-500 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300  font-semibold '>
               Add Listing
             </Link>
-            <button className='border border-gray-600 text-gray-700 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-gray-300   '>
-              <i class='fa fa-heart' aria-hidden='true'></i>
-            </button>
-            <button className='border border-gray-600 text-gray-700 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-gray-300   '>
+            <Favorite>
+              <button className='border border-blue-600 text-blue-500 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300   '>
+                <i class='fa fa-heart' aria-hidden='true'></i>
+              </button>
+            </Favorite>
+            <button className='border border-blue-600 text-blue-500 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300   '>
               <i class='fa fa-retweet' aria-hidden='true'></i>
             </button>
           </div>
