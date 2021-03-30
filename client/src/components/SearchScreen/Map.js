@@ -1,9 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
+import { useSelector } from 'react-redux';
 const MapboxGLMap = ({ location }) => {
-  location = [20, 70];
+  const locations = useSelector(state => state.locations);
+  console.log(locations);
+  location =
+    locations && locations.length > 0
+      ? locations[0].geometry.coordinates
+      : [-72.880468, 41.323331];
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
 
@@ -15,12 +20,17 @@ const MapboxGLMap = ({ location }) => {
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         center: [0, 0],
-        zoom: 4,
+        zoom: 10,
       });
 
       map.on('load', () => {
+        let marker = new mapboxgl.Marker()
+          .setLngLat([-72.880468, 41.323331])
+          .addTo(map);
+
         setMap(map);
         map.resize();
+
         map.loadImage(
           'https://upload.wikimedia.org/wikipedia/commons/f/f2/678111-map-marker-512.png',
 
@@ -35,15 +45,7 @@ const MapboxGLMap = ({ location }) => {
               type: 'geojson',
               data: {
                 type: 'FeatureCollection',
-                features: [
-                  {
-                    type: 'Feature',
-                    geometry: {
-                      type: 'Point',
-                      coordinates: [0, 0],
-                    },
-                  },
-                ],
+                features: locations,
               },
             });
             map.addLayer({
@@ -52,7 +54,7 @@ const MapboxGLMap = ({ location }) => {
               source: 'point',
               layout: {
                 'icon-image': 'mapMarker',
-                'icon-size': 0.15,
+                'icon-size': 0.1,
               },
             });
           }
@@ -61,7 +63,7 @@ const MapboxGLMap = ({ location }) => {
     };
 
     if (!map) initializeMap({ setMap, mapContainer });
-  }, [map]);
+  }, [map, locations]);
 
   return (
     <div className='col-span-12 px-5  lg:col-span-6 lg:px-0 ' id='map-height'>
