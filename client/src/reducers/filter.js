@@ -5,6 +5,7 @@ import {
   BEDS,
   COUNTERY,
   PRICE,
+  RESET_FILTER,
   STATUS,
   TITLE,
 } from '../actions/actionsType';
@@ -17,7 +18,6 @@ export const filter = (state = {}, { type, payload }) => {
         amenities: payload,
       };
     case TITLE:
-    
       return {
         ...state,
         title: payload,
@@ -58,6 +58,9 @@ export const filter = (state = {}, { type, payload }) => {
         ...state,
         status: payload,
       };
+
+    case RESET_FILTER:
+      return {};
     default:
       return state;
   }
