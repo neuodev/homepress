@@ -78,6 +78,7 @@ const Search = ({ history }) => {
       </div>
       <div className='mt-5 w-full '>
         <AdvancedSearch
+          history={history}
           show={showAdvancedSearch ? true : false}></AdvancedSearch>
       </div>
     </div>

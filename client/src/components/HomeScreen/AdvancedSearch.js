@@ -32,19 +32,29 @@ const cities = [
   'San Jose',
 ];
 
-const AdvancedSearch = ({ children, show }) => {
+const AdvancedSearch = ({ children, show, history }) => {
   const filter = useSelector(state => state.filter);
   const [city, setCity] = useState(filter.city);
   const [showList, setShowlist] = useState(false);
-  const [price, setPrice] = React.useState([345, 880000]);
-  const [area, setArea] = React.useState([1478, 34000]);
-  const [bathRoom, setBathRoom] = useState('Select Bath');
+  const [price, setPrice] = React.useState(
+    filter.price ? filter.price : [100, 100000]
+  );
+  const [area, setArea] = React.useState(
+    filter.area ? filter.area : [100, 34000]
+  );
+  const [bathRoom, setBathRoom] = useState(
+    filter.baths ? filter.baths : 'Select Bath'
+  );
   const [showBath, setShowBath] = useState(false);
-  const [beds, setBeds] = useState('Select Beds');
+  const [beds, setBeds] = useState(filter.beds ? filter.beds : 'Select Beds');
   const [showBeds, setShowBeds] = useState(false);
-  const [status, setStatus] = useState('Select Status');
+  const [status, setStatus] = useState(
+    filter.status ? filter.status : 'Select Status'
+  );
   const [showStatus, setShowStatus] = useState(false);
-  const [selectAmenities, setAmenities] = useState([]);
+  const [selectAmenities, setAmenities] = useState(
+    filter.amenities ? filter.amenities : []
+  );
   const dispatch = useDispatch();
   const updateCity = city => {
     setCity(city);
@@ -91,8 +101,19 @@ const AdvancedSearch = ({ children, show }) => {
     return found;
   };
 
+  const applyFilter = () => {
+    history.push('/search');
+  };
+
   const resetFilter = () => {
     dispatch({ type: RESET_FILTER });
+    setAmenities([]);
+    setArea([100, 34000]);
+    setPrice([100, 100000]);
+    setCity('');
+    setBathRoom(false);
+    setBeds(false);
+    setStatus(false);
   };
 
   document.addEventListener('click', e => {
@@ -109,7 +130,7 @@ const AdvancedSearch = ({ children, show }) => {
       {children}
       <div
         id='search-height'
-        className={`bg-gray-200 w-full rounded-md  shadow-md mt-5 max-w-screen-xl mx-auto ${
+        className={`bg-gray-100 border w-full rounded-md  shadow-md mt-5 max-w-screen-xl mx-auto ${
           show ? 'show' : 'hide'
         } `}>
         <div className='md:grid gap-4  md:grid-cols-12 px-6 py-8 '>
@@ -119,8 +140,8 @@ const AdvancedSearch = ({ children, show }) => {
               <div className='flex items-center font-medium text-gray-600'>
                 <Checkbox
                   checked={isFound(item)}
+                  edge='start'
                   onChange={() => amenitiesHandler(item)}
-                  value={item}
                   disableRipple
                 />
                 <p>{item}</p>
@@ -129,11 +150,13 @@ const AdvancedSearch = ({ children, show }) => {
           </div>
           <div className='md:col-span-9 md:grid md:gap-3 md:grid-cols-12'>
             <div className='w-full  flex flex-col items-center relative mb-5 md:col-span-6 mt-5 md:mt-0 filter-list'>
-              <h1 className='text-left w-full  mb-1'>Coutery</h1>
+              <h1 className='text-left w-full font-semibold text-sm  mb-1'>
+                Countery
+              </h1>
               <p
                 onClick={() => setShowlist(!showList)}
                 className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-                {city}
+                {city ? city : 'Select city'}
                 <i
                   class={`fa fa-chevron-down transform ${
                     showList && 'rotate-180'
@@ -156,7 +179,7 @@ const AdvancedSearch = ({ children, show }) => {
             </div>
             <div className='md:col-span-12 gap-5 grid grid-cols-12 '>
               <div className='col-span-12 md:col-span-6'>
-                <h1 className='text-lg font-medium text-gray-800 mb-2'>
+                <h1 className='text-sm font-semibold text-gray-800 mb-1'>
                   Price
                 </h1>
                 <div className='flex items-center justify-between'>
@@ -169,16 +192,16 @@ const AdvancedSearch = ({ children, show }) => {
                 </div>
                 <div className='mt-3 mb-5'>
                   <Slider
-                    min={10000}
+                    min={100}
                     step={2000}
-                    max={880000}
+                    max={100000}
                     value={price}
                     onChange={priceHandler}
                   />
                 </div>
               </div>
               <div className='col-span-12 md:col-span-6'>
-                <h1 className='text-lg font-medium text-gray-800 mb-2'>
+                <h1 className='text-sm font-semibold text-gray-800 mb-1'>
                   Area (sqft)
                 </h1>
                 <div className='flex items-center justify-between'>
@@ -191,7 +214,7 @@ const AdvancedSearch = ({ children, show }) => {
                 </div>
                 <div className='mt-3 mb-5'>
                   <Slider
-                    min={10000}
+                    min={100}
                     step={2000}
                     max={34000}
                     value={area}
@@ -201,12 +224,12 @@ const AdvancedSearch = ({ children, show }) => {
               </div>
             </div>
             {/* Beds */}
-            <div className='filter-list w-full  flex flex-col items-center relative mb-5  md:col-span-4 '>
-              <p className='w-full mb-1 text-xs font-medium'>Beds</p>
+            <div className='filter-list w-full  flex flex-col items-center relative mb-5  md:col-span-4  cursor-pointer'>
+              <p className='w-full mb-1 text-sm font-semibold'>Beds</p>
               <p
                 onClick={() => setShowBeds(!showBeds)}
                 className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-                {beds}
+                {beds ? beds : 'Select Beds'}
                 <i
                   class={`fa fa-chevron-down transform ${
                     showBeds && 'rotate-180'
@@ -218,7 +241,7 @@ const AdvancedSearch = ({ children, show }) => {
                   !showBeds ? ' opacity-0 hidden' : 'opacity-100'
                 } top-16 bg-gray-50 w-full rounded-md shadow-md  py-5 border transition-all duration-200 z-10 overflow-scroll h-32  `}
                 id='scroll'>
-                {[1, 2, 3, 4].map((beds, idx) => (
+                {[1, 2, 3, 4, 5, 6].map((beds, idx) => (
                   <li
                     onClick={() => updateBeds(beds)}
                     className='py-1 hover:bg-gray-100 px-7 cursor-pointer text-gray-600 hover:text-gray-700'
@@ -229,12 +252,12 @@ const AdvancedSearch = ({ children, show }) => {
               </ul>
             </div>
             {/* Bath  */}
-            <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5  filter-list'>
-              <p className='w-full mb-1 text-xs font-medium'>Bath</p>
+            <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5  filter-list cursor-pointer'>
+              <p className='w-full mb-1  text-sm font-semibold'>Bath</p>
               <p
                 onClick={() => setShowBath(!showBath)}
                 className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-                {bathRoom}
+                {bathRoom ? bathRoom : 'Select Baths'}
                 <i
                   class={`fa fa-chevron-down transform ${
                     showBath && 'rotate-180'
@@ -258,11 +281,11 @@ const AdvancedSearch = ({ children, show }) => {
             </div>
             {/* Status */}
             <div className='md:col-span-4 w-full flex flex-col items-center relative mb-5 filter-list cursor-pointer'>
-              <p className='w-full mb-1 text-xs font-semibold '>Status</p>
+              <p className='w-full mb-1  text-sm font-semibold '>Status</p>
               <p
                 onClick={() => setShowStatus(!showStatus)}
                 className='border font-medium  w-full bg-white py-3 rounded-md  shadow-sm px-7 flex items-center justify-between'>
-                {status}
+                {status ? status : 'Select Status'}
                 <i
                   class={`fa fa-chevron-down transform ${
                     showStatus && 'rotate-180'
@@ -283,12 +306,21 @@ const AdvancedSearch = ({ children, show }) => {
                 ))}
               </ul>
             </div>
-            <div className=' md:col-span-12  lg:col-start-9 lg:col-end-13'>
+            <div className=' col-span-12 grid grid-cols-12 gap-5'>
               <button
-                onClick={resetFilter}
-                className='border w-full h-full py-3 px-6 font-semibold uppercase tracking-wider  border-blue-500 hover:bg-blue-100 text-blue-500  focus:outline-none focus:ring transition-colors duration-300'>
-                Reset
+                onClick={applyFilter}
+                className='border w-full h-full py-3 px-6 font-semibold uppercase tracking-wider  border-blue-500 hover:bg-blue-100 text-blue-500  focus:outline-none focus:ring transition-colors duration-300 flex items-center justify-center col-span-12 md:col-span-6'>
+                <i class='fas  fa-filter   mr-2 '></i>
+                <p> Apply Filter</p>
               </button>
+              <div className=' col-span-12 md:col-span-6'>
+                <button
+                  onClick={resetFilter}
+                  className='border w-full h-full py-3 px-6 font-semibold uppercase tracking-wider  border-red-500 bg-red-50 hover:bg-red-100 text-red-500  focus:outline-none focus:ring focus:ring-red-200 transition-colors duration-300 flex items-center justify-center'>
+                  <i class='fas fa-undo-alt mr-2'></i>
+                  <p>Reset</p>
+                </button>
+              </div>
             </div>
           </div>
         </div>

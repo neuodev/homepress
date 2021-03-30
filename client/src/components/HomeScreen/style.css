@@ -13,7 +13,7 @@
 }
 
 .show {
-  height: 120vh;
+  height: 125vh;
   overflow: hidden;
   transition: all 1s ease;
 }
