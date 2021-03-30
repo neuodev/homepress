@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { SEARCH_PROPERTY } from '../../querys/querys';
 import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { pipeline } from '../utils/pipeline';
+import { SORT } from '../../actions/actionsType';
 const selectSort = [
   {
     text: 'Newset',
@@ -32,9 +33,11 @@ const Properties = () => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
   const advancedFilter = useSelector(state => state.filter);
+  const dispatch = useDispatch();
   const updateSelect = sort => {
     setSowList(false);
     setSort(sort);
+    dispatch({ type: SORT, payload: sort.value });
   };
 
   const filterPipeline = pipeline(advancedFilter);

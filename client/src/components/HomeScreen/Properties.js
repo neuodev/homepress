@@ -12,7 +12,7 @@ const Properties = () => {
   const dispatch = useDispatch();
 
   const { loading, error, data } = useQuery(GET_PROPERTY);
-  console.log(data);
+
   if (error) {
     dispatch({ type: GET_HOME_PROPERTY_FAIL, payload: error });
   } else if (data) {
