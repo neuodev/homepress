@@ -48,7 +48,11 @@ const Favorite = ({ children }) => {
             </button>
           </div>
           {favoriteItems.length === 0 ? (
-            <div className='bg-yellow-200 px-4 py-7 my-4 text-yellow-600 font-semibold uppercase tracking-wider'>
+            <div
+              className='bg-yellow-200 px-4 py-7 my-4 text-yellow-600 font-semibold uppercase tracking-wider '
+              style={{
+                margin: '0px  16px 0px 16px',
+              }}>
               <p>You favorite list is Empty</p>
               <Link
                 className='bg-yellow-300 px-3 py-2 inline-block mt-4 focus:outline-none '

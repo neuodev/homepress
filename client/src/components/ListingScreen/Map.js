@@ -2,11 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const styles = {
-  width: '100%',
-  height: '100%',
-  position: 'block',
-};
+
 
 const MapboxGLMap = ({ location }) => {
   location = location.coordinates;
@@ -36,7 +32,7 @@ const MapboxGLMap = ({ location }) => {
     if (!map) initializeMap({ setMap, mapContainer });
   }, [map]);
 
-  return <div ref={el => (mapContainer.current = el)} style={styles} />;
+  return <div ref={el => (mapContainer.current = el)}  />;
 };
 
 export default MapboxGLMap;
