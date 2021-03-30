@@ -15,3 +15,5 @@ export const STATUS = 'STATUS';
 export const TITLE = 'TITLE';
 export const SORT = 'SORT';
 export const RESET_FILTER = 'RESET_FILTER';
+
+export const GET_LOCATIONS = 'GET_LOCATIONS';
