@@ -12,7 +12,7 @@ const HomeScreen = ({ history }) => {
     <div className='bg-gray-50'>
       <Showcase />
       <Search history={history} />
-      <Properties />
+      <Properties history={history} />
       <Why />
       <Testimonials />
       <Partners />

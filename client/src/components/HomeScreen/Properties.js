@@ -6,9 +6,10 @@ import { GET_PROPERTY } from '../../querys/querys';
 import {
   GET_HOME_PROPERTY_FAIL,
   GET_HOME_PROPERTY_SUCCESS,
+  RESET_FILTER,
 } from '../../actions/actionsType';
 import PropertySkeleton from './PropertySkeleton';
-const Properties = () => {
+const Properties = ({ history }) => {
   const dispatch = useDispatch();
 
   const { loading, error, data } = useQuery(GET_PROPERTY);
@@ -18,6 +19,11 @@ const Properties = () => {
   } else if (data) {
     dispatch({ type: GET_HOME_PROPERTY_SUCCESS, payload: data });
   }
+
+  const viewMore = () => {
+    dispatch({ type: RESET_FILTER });
+    history.push('/search');
+  };
   return (
     <div className='container mx-auto'>
       <div className='flex items-center flex-col justify-center mt-6'>
@@ -48,7 +54,9 @@ const Properties = () => {
         )}
       </div>
       <div className='flex items-center justify-center mb-3'>
-        <button className='bg-blue-600 text-white  px-6 py-3 rounded-md font-medium lg:text-xl focus:outline-none focus:ring uppercase tracking-wider   '>
+        <button
+          onClick={viewMore}
+          className='bg-blue-600 text-white  px-6 py-3 rounded-md font-medium lg:text-xl focus:outline-none focus:ring uppercase tracking-wider   '>
           view more
         </button>
       </div>
