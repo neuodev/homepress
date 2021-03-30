@@ -14,20 +14,6 @@ const Favorite = ({ children }) => {
         </p>
         {children}
       </div>
-
-      <div
-        className='absolute top-1/2  left-0 w-full  '
-        style={{
-          height: '40vh',
-        }}>
-        <div className='bg-gray-50 mx-5'>
-          <FavoriteCard />
-          <FavoriteCard />
-          <FavoriteCard />
-          <FavoriteCard />
-          <FavoriteCard />
-        </div>
-      </div>
     </div>
   );
 };
