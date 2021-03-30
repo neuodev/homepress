@@ -60,30 +60,30 @@ const PropertyCard = ({ property }) => {
           </h1>
         </Link>
         <div className='flex flex-wrap items-center justify-start mb-4 '>
-          <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
+          <div className='w-1/2 flex items-baseline text-gray-400 md:text-lg  '>
             <div className='w-5 h-5 text-gray-400 mr-1 md:mr-2'>
-              <i class='far fa-bed' aria-hidden='true'></i>
+              <i class='fa fa-bed' aria-hidden='true'></i>
             </div>
             <div className='mr-1'>{beds}</div>
             <p>Beds</p>
           </div>
-          <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
+          <div className='w-1/2 flex items-baseline text-gray-400 md:text-lg  '>
             <div className='w-5 h-5 text-gray-400 mr-1 md:mr-2'>
-              <i class='far fa-bath' aria-hidden='true'></i>
+              <i class='fa fa-bath' aria-hidden='true'></i>
             </div>
             <div className='mr-1'>{baths}</div>
             <p>Baths</p>
           </div>
-          <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
+          <div className='w-1/2 flex items-baseline text-gray-400 md:text-lg  '>
             <div className='w-5 h-5 text-gray-400 mr-1 md:mr-2'>
-              <i class='far fa-layer-group'></i>
+              <i class='fa fa-layer-group'></i>
             </div>
             <div className='mr-1'>{area}</div>
             <p>sqft</p>
           </div>
-          <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
+          <div className='w-1/2 flex items-baseline text-gray-400 md:text-lg  '>
             <div className='w-5 h-5 text-gray-400 mr-1 md:mr-2'>
-              <i class='far fa-building' aria-hidden='true'></i>
+              <i class='fa fa-building' aria-hidden='true'></i>
             </div>
             <div className='mr-1'>{features.builtYear}</div>
           </div>

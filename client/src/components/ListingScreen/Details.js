@@ -52,12 +52,9 @@ const Details = ({ property }) => {
                 <p>Email</p>
               </a>
             </div>
-            <div className='flex items-center  justify-center  mr-4'>
-              <i className='far fa-heart mr-2' aria-hidden='true'></i>
-              <p>save</p>
-            </div>
+
             <div className='flex items-center  justify-center'>
-              <i className='far fa-share-alt mr-2 '></i>
+              <i className='fa fa-share-alt mr-2 '></i>
               <p>share</p>
             </div>
           </div>

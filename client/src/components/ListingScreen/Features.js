@@ -64,7 +64,7 @@ const Features = ({ features }) => {
 
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-hotel    '></i>
+            <i class='fa fa-building'></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -75,7 +75,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='fal fa-user-hard-hat'></i>
+            <i class='fas fa-clock    '></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -86,7 +86,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-car-building    '></i>
+            <i class='fa fa-car' aria-hidden='true'></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -97,7 +97,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-swimming-pool '></i>
+            <i class='fa fa-swimming-pool '></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -108,7 +108,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-fireplace' aria-hidden='true'></i>
+            <i class='fab fa-gripfire    '></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -121,7 +121,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-fan-table'></i>
+            <i className='fa fa-fan'></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>
@@ -134,7 +134,7 @@ const Features = ({ features }) => {
         </div>
         <div className='col-span-6 lg:col-span-3 justify-start flex items-center '>
           <div className='mr-3 text-4xl text-blue-500 '>
-            <i class='far fa-lock-alt    '></i>
+            <i class='fa fa-lock'></i>
           </div>
           <div className=' text-left  '>
             <p className='font-light uppercase tracking-wider text-xs'>

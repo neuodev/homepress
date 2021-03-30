@@ -88,7 +88,7 @@ const Form = () => {
         </div>
         <div className='mb-3'>
           <div className='w-full flex items-center  bg-gray-200 px-4 '>
-            <i class='far fa-phone mr-2' aria-hidden='true'></i>
+            <i class='fa fa-phone mr-2' aria-hidden='true'></i>
             <input
               value={phone}
               onChange={e => setPhone(e.target.value)}

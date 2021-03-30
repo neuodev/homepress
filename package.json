@@ -4,8 +4,8 @@
   "description": "real estate website ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" ,
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "cd backend && node server.js",
+    "heroku-postbuilddd": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Ahmed Ibrahim",
   "license": "MIT",

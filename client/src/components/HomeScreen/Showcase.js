@@ -36,6 +36,7 @@ const Showcase = ({ history }) => {
             <Favorite>
               <button className='border border-blue-600  bg-blue-100  text-blue-500 px-3 py-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300   '>
                 <i class='fa fa-heart' aria-hidden='true'></i>
+               
               </button>
             </Favorite>
           </div>
