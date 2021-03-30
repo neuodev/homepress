@@ -122,6 +122,11 @@
   transform-origin: top right;
   transition: all 0.4s ease;
 }
+
+#favorite-list-height {
+  max-height: 560px;
+  overflow-y: scroll;
+}
 @media (min-width: 640px) {
   #height-search-card {
     height: 229px;
