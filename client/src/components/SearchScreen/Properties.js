@@ -6,6 +6,7 @@ import PropertySearchCard from './PropertySearchCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { pipeline } from '../utils/pipeline';
 import { SORT } from '../../actions/actionsType';
+import { getLocations } from '../../utils/getLocations';
 const selectSort = [
   {
     text: 'Newset',
@@ -98,9 +99,12 @@ const Properties = () => {
         ) : error ? (
           <Alert serverity='error' message={error} />
         ) : (
-          data.properties.map(property => (
-            <PropertySearchCard property={property} key={property.id} />
-          ))
+          data.properties.map(property => {
+
+            const features = getLocations(data.properties)
+
+            return <PropertySearchCard property={property} key={property.id} />;
+          })
         )}
       </div>
     </div>
