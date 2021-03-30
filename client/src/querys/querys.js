@@ -67,6 +67,9 @@ export const SEARCH_PROPERTY = gql`
       price
       discount
       images
+      location {
+        coordinates
+      }
     }
   }
 `;
