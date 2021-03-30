@@ -1,9 +1,16 @@
+#map-height-search {
+  height: 400px;
+}
+
 #map-height {
   height: 400px;
 }
 
 @media (min-width: 1024px) {
-  #map-height {
+  #map-height-search {
     height: calc(100vh - 100px);
+  }
+  #map-height {
+    height: 500px;
   }
 }

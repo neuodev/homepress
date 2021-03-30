@@ -64,7 +64,7 @@ const MapboxGLMap = ({ properties }) => {
   return (
     <div
       className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 mt-5 lg:mt-0   h-full'
-      id='map-height'>
+      id='map-height-search'>
       <div
         className=' shadow-inner w-full h-full'
         ref={el => (mapContainer.current = el)}
