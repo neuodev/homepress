@@ -85,6 +85,15 @@
   height: 450px;
 }
 
+.showFavorite {
+  transform: translateX(0px);
+  transition: transform 0.2s ease;
+}
+.hideFavorite {
+  transform: translateX(500px);
+  transition: transform 0.2s ease;
+}
+
 @media (min-width: 640px) {
   #height-search-card {
     height: 229px;

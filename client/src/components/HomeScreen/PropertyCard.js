@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-
-
+import { useDispatch, useSelector } from 'react-redux';
+import { FAVORITE_ADD_ITEM } from '../../actions/actionsType';
 const PropertyCard = ({ property }) => {
   const {
     area,
@@ -15,21 +14,45 @@ const PropertyCard = ({ property }) => {
     title,
     id,
   } = property;
-
+  const [showFavorite, setShowFavorite] = useState(false);
   const newPrice = price - price * (discount / 100);
+  const dispatch = useDispatch();
+  const { favoriteItems } = useSelector(state => state.favoriteList);
+
+  const isExist = favoriteItems.find(item => item.id === id);
+  const addToFavorite = () => {
+    dispatch({ type: FAVORITE_ADD_ITEM, payload: property });
+  };
   return (
     <div
-      className='col-span-6 lg:col-span-4 xl:col-span-6  rounded-lg overflow-hidden  shadow-lg hover:shadow-2xl border xl:flex transition-shadow duration-500'
+      onMouseEnter={() => setShowFavorite(true)}
+      onMouseLeave={() => setShowFavorite(false)}
+      className='col-span-6 lg:col-span-4 xl:col-span-6  rounded-lg overflow-hidden  shadow-lg hover:shadow-2xl border xl:flex transition-shadow duration-500 relative'
       id='card-height'>
-      <div className=' w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-blue-50 rounded-md xl:mr-3'>
-        <Link to={`/listing/${id}`}>
-          <img
-            className='object-cover block w-full h-full'
-            src={images[0]}
-            alt='property name'
-          />
-        </Link>
-      </div>
+      <button
+        onClick={addToFavorite}
+        className={` absolute  right-3 top-2 cursor-pointer text-white text-xl z-50 focus:outline-none  focus:ring-gray-400 rounded-full  ${
+          showFavorite ? 'showFavorite' : 'hideFavorite'
+        }`}>
+        {isExist ? (
+          <i class='fa fa-heart' aria-hidden='true'></i>
+        ) : (
+          <i class={`far fa-heart`} aria-hidden='true'></i>
+        )}
+      </button>
+      <Link to={`/listing/${id}`}>
+        <div
+          className=' relative w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-blue-50 rounded-md xl:mr-3'
+          id={showFavorite ? 'overlay' : ''}>
+          <Link to={`/listing/${id}`}>
+            <img
+              className='object-cover block w-full h-full'
+              src={images[0]}
+              alt='property name'
+            />
+          </Link>
+        </div>
+      </Link>
       <div className='px-3 py-4 mt-1 h-1/2 '>
         <Link to={`/listing/${id}`}>
           <h1 className='mb-4 text-lg font-semibold md:text-2xl '>{title}</h1>
