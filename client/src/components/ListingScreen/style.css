@@ -27,7 +27,7 @@
     overflow: scroll;
   }
   #map-height {
-    height: 100%;
+    height: 500px;
   }
 
   #pro-h::-webkit-scrollbar {

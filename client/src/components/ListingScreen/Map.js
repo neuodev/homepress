@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-
-
 const MapboxGLMap = ({ location }) => {
   location = location.coordinates;
   const [map, setMap] = useState(null);
@@ -32,7 +30,12 @@ const MapboxGLMap = ({ location }) => {
     if (!map) initializeMap({ setMap, mapContainer });
   }, [map]);
 
-  return <div ref={el => (mapContainer.current = el)}  />;
+  return (
+    <div
+      className='w-full h-full inline-block'
+      ref={el => (mapContainer.current = el)}
+    />
+  );
 };
 
 export default MapboxGLMap;
