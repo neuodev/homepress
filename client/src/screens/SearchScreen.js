@@ -8,6 +8,7 @@ import { pipeline } from '../components/utils/pipeline';
 import { useQuery } from '@apollo/client';
 import { SEARCH_PROPERTY } from '../querys/querys';
 import Alert from '../components/utils/Alert';
+import SearchSkeleton from '../components/SearchScreen/SearchSkeleton';
 
 const SearchScreen = ({ history }) => {
   const advancedFilter = useSelector(state => state.filter);
@@ -25,7 +26,9 @@ const SearchScreen = ({ history }) => {
       <NavBar title={advancedFilter.title ? advancedFilter.title : 'Search'} />
       <Filter />
       {true ? (
-        <div>Loading</div>
+        <div>
+          <SearchSkeleton />
+        </div>
       ) : error ? (
         <Alert serverity='error' message={error.message} />
       ) : (

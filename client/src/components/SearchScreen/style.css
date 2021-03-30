@@ -6,11 +6,19 @@
   height: 400px;
 }
 
+#skeleton-h {
+  height: 500px;
+}
+
 @media (min-width: 1024px) {
   #map-height-search {
     height: calc(100vh - 100px);
   }
   #map-height {
     height: 500px;
+  }
+
+  #skeleton-h {
+    height: calc(100vh - 200px);
   }
 }
