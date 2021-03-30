@@ -1,0 +1,923 @@
+[{
+  "_id": {
+    "$oid": "606175707139ca1918ec5997"
+  },
+  "discount": 10,
+  "images": [
+    "./images/pro-1.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-8.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Dining Room",
+    "Doorman",
+    "Elevator",
+    "Fireplace",
+    "Gym",
+    "Onsite Parking",
+    "Parking",
+    "Spa",
+    "Stunning views",
+    "Waterfront"
+  ],
+  "title": "9 Birch Hill St. Champlin, MN 55316",
+  "price": 4469,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "88 Beatrice Rd, Brisbane, CA 94005, USA",
+  "rooms": 10,
+  "area": 2500,
+  "beds": 3,
+  "baths": 2,
+  "priceForSqft": 450,
+  "features": {
+    "parking": false,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": false,
+    "stories": "Multi Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "606175707139ca1918ec5998"
+    },
+    "status": "Active",
+    "garage": 1,
+    "builtYear": 2014
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.402312,
+      37.678346
+    ],
+    "formatedAddress": "88 Beatrice Rd, Brisbane, CA 94005-1672, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:36:32.525Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:36:32.525Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606176bf7139ca1918ec5999"
+  },
+  "discount": 8,
+  "images": [
+    "./images/pro-2.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-8.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "2 Glen Creek St. Alexandria, VA 22304",
+  "price": 4100,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "Summit Loop Trail, Daly City, CA 94014, USA",
+  "rooms": 4,
+  "area": 2500,
+  "beds": 2,
+  "baths": 3,
+  "priceForSqft": 450,
+  "features": {
+    "parking": false,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": false,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "606176bf7139ca1918ec599a"
+    },
+    "status": "Active",
+    "garage": 1,
+    "builtYear": 2014
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.451431,
+      37.693765
+    ],
+    "formatedAddress": ", Daly City, CA 94014, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:42:07.512Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:42:07.512Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606177ac7139ca1918ec599d"
+  },
+  "discount": 15,
+  "images": [
+    "./images/pro-7.jpg",
+    "./images/pro-10.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-8.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-1.jpg"
+  ],
+  "amenities": [
+    "Elevator",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Waterfront",
+    "Onsite Parking",
+    "Hardwood Flows",
+    "Doorman",
+    "Balcony",
+    "Dishwasher",
+    "Spa",
+    "Gym"
+  ],
+  "title": "9173 Livingston Dr. North Wales, PA 19454",
+  "price": 1408,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "1763 28th Ave, San Francisco, CA 94122, USA",
+  "rooms": 6,
+  "area": 2650,
+  "beds": 3,
+  "baths": 4,
+  "priceForSqft": 350,
+  "features": {
+    "parking": false,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": false,
+    "stories": "Multi Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "606177ac7139ca1918ec599e"
+    },
+    "status": "Sold",
+    "garage": 2,
+    "builtYear": 2005
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.486169,
+      37.754506
+    ],
+    "formatedAddress": "1763 28th Ave, San Francisco, CA 94122-4218, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:46:04.320Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:46:04.320Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6061782e7139ca1918ec599f"
+  },
+  "discount": 5,
+  "images": [
+    "./images/pro-10.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-8.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-1.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer"
+  ],
+  "title": "66 Belmont Ave. Taunton, MA 02780",
+  "price": 2566,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "1763 28th Ave, San Francisco, CA 94122, USA",
+  "rooms": 10,
+  "area": 3020,
+  "beds": 12,
+  "baths": 5,
+  "priceForSqft": 550,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "6061782e7139ca1918ec59a0"
+    },
+    "status": "Active",
+    "garage": 4,
+    "builtYear": 2020
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.486169,
+      37.754506
+    ],
+    "formatedAddress": "1763 28th Ave, San Francisco, CA 94122-4218, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:48:14.761Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:48:14.761Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606178ad85d6954348b2ee4e"
+  },
+  "discount": 20,
+  "images": [
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Elevator",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Waterfront",
+    "Onsite Parking",
+    "Hardwood Flows",
+    "Doorman",
+    "Balcony",
+    "Dishwasher",
+    "Spa",
+    "Gym"
+  ],
+  "title": "7240C Argyle St. Lawndale, CA 90260",
+  "price": 2300,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "1763 28th Ave, San Francisco, CA 94122, USA",
+  "rooms": 3,
+  "area": 3020,
+  "beds": 12,
+  "baths": 5,
+  "priceForSqft": 550,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": false,
+    "cooling": true,
+    "stories": "Single Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "606178ad85d6954348b2ee4f"
+    },
+    "status": "Sold",
+    "garage": 1,
+    "builtYear": 2017
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.486169,
+      37.754506
+    ],
+    "formatedAddress": "1763 28th Ave, San Francisco, CA 94122-4218, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:50:21.697Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:50:21.697Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6061792e85d6954348b2ee50"
+  },
+  "discount": 13,
+  "images": [
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Elevator",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Waterfront",
+    "Onsite Parking",
+    "Hardwood Flows",
+    "Doorman",
+    "Balcony",
+    "Dishwasher",
+    "Spa",
+    "Gym"
+  ],
+  "title": "10 Leeton Ridge Ave. Hephzibah, GA 30815",
+  "price": 2500,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "1657 Powell St, San Francisco, CA 94133, USA",
+  "rooms": 9,
+  "area": 4020,
+  "beds": 6,
+  "baths": 6,
+  "priceForSqft": 250,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": false,
+    "stories": "Single Family",
+    "swimmingPool": 0,
+    "_id": {
+      "$oid": "6061792e85d6954348b2ee51"
+    },
+    "status": "Active",
+    "garage": 2,
+    "builtYear": 2019
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.410762,
+      37.799842
+    ],
+    "formatedAddress": "1657 Powell St, San Francisco, CA 94133-2813, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:52:30.683Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:52:30.683Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606179b985d6954348b2ee52"
+  },
+  "discount": 10,
+  "images": [
+    "./images/pro-10.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-6.jpg"
+  ],
+  "amenities": [
+    "Elevator",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Waterfront",
+    "Onsite Parking",
+    "Hardwood Flows",
+    "Doorman",
+    "Balcony",
+    "Dishwasher",
+    "Spa",
+    "Gym"
+  ],
+  "title": "28 Westport Dr. Warminster, PA 18974",
+  "price": 2800,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " 32 Turquoise Way, San Francisco, CA 94131, USA",
+  "rooms": 3,
+  "area": 2500,
+  "beds": 3,
+  "baths": 2,
+  "priceForSqft": 450,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": false,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "606179b985d6954348b2ee53"
+    },
+    "status": "Sold",
+    "garage": 1,
+    "builtYear": 2019
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.446006,
+      37.745069
+    ],
+    "formatedAddress": "32 Turquoise Way, San Francisco, CA 94131-1638, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:54:49.345Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:54:49.345Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60617a5885d6954348b2ee54"
+  },
+  "discount": 20,
+  "images": [
+    "./images/pro-7.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-6.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "7115 Glenholme Rd. Little Rock, AR 72209",
+  "price": 3480,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " 32 Turquoise Way, San Francisco, CA 94131, USA",
+  "rooms": 3,
+  "area": 3600,
+  "beds": 4,
+  "baths": 4,
+  "priceForSqft": 500,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "60617a5885d6954348b2ee55"
+    },
+    "status": "Active",
+    "garage": 3,
+    "builtYear": 2021
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.446006,
+      37.745069
+    ],
+    "formatedAddress": "32 Turquoise Way, San Francisco, CA 94131-1638, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:57:28.547Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:57:28.547Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60617ac085d6954348b2ee56"
+  },
+  "discount": 21,
+  "images": [
+    "./images/pro-5.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-10.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "615 Church Drive Astoria, NY 11102",
+  "price": 3444,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " 32 Goethe St, Daly City, CA 94014, USA",
+  "rooms": 3,
+  "area": 22600,
+  "beds": 1,
+  "baths": 1,
+  "priceForSqft": 500,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": false,
+    "cooling": false,
+    "stories": "Multi Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "60617ac085d6954348b2ee57"
+    },
+    "status": "Active",
+    "garage": 1,
+    "builtYear": 2021
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.457734,
+      37.707696
+    ],
+    "formatedAddress": "32 Goethe St, Daly City, CA 94014-1010, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T06:59:12.485Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T06:59:12.485Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606197279354073d38e5284f"
+  },
+  "discount": 5,
+  "images": [
+    "./images/pro-9.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "7031 N. Fairway St. Winchester, VA 22601",
+  "price": 3480,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": "  30 Medical Center Way, San Francisco, CA 94143, USA",
+  "rooms": 1,
+  "area": 2260,
+  "beds": 3,
+  "baths": 4,
+  "priceForSqft": 200,
+  "features": {
+    "parking": false,
+    "security": false,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Single Family",
+    "swimmingPool": 1,
+    "_id": {
+      "$oid": "606197279354073d38e52850"
+    },
+    "status": "Sold",
+    "garage": 2,
+    "builtYear": 2011
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.45666,
+      37.762211
+    ],
+    "formatedAddress": "30 Medical Center Way, San Francisco, CA 94131, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T09:00:23.717Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T09:00:23.717Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606197a29354073d38e52851"
+  },
+  "discount": 20,
+  "images": [
+    "./images/pro-2.jpg",
+    "./images/pro-9.jpg",
+    "./images/pro-6.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "32 Pawnee Street Butte, MT 59701",
+  "price": 3400,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " 204 Juanita Way, San Francisco, CA 94127, USA",
+  "rooms": 6,
+  "area": 2260,
+  "beds": 6,
+  "baths": 6,
+  "priceForSqft": 500,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "606197a29354073d38e52852"
+    },
+    "status": "Active",
+    "garage": 3,
+    "builtYear": 2015
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.455104,
+      37.741574
+    ],
+    "formatedAddress": "204 Juanita Way, San Francisco, CA 94127-1736, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T09:02:26.124Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T09:02:26.124Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606197f29354073d38e52853"
+  },
+  "discount": 5,
+  "images": [
+    "./images/pro-3.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "9 Birch Hill St. Champlin, MN 55316",
+  "price": 4400,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " 88 Beatrice Rd, Brisbane, CA 94005, USA",
+  "rooms": 6,
+  "area": 2260,
+  "beds": 6,
+  "baths": 6,
+  "priceForSqft": 500,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "606197f29354073d38e52854"
+    },
+    "status": "Active",
+    "garage": 3,
+    "builtYear": 2015
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.402312,
+      37.678346
+    ],
+    "formatedAddress": "88 Beatrice Rd, Brisbane, CA 94005-1672, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T09:03:46.408Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T09:03:46.408Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606198229354073d38e52855"
+  },
+  "discount": 5,
+  "images": [
+    "./images/pro-4.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-7.jpg",
+    "./images/pro-1.jpg",
+    "./images/pro-3.jpg",
+    "./images/pro-5.jpg",
+    "./images/pro-2.jpg",
+    "./images/pro-4.jpg",
+    "./images/pro-10.jpg"
+  ],
+  "amenities": [
+    "Car garage",
+    "Cleaning Service",
+    "Cleaning Service",
+    "Doorman",
+    "Central Heating",
+    "Onsite Parking",
+    "Family Room",
+    "Pets Allowed",
+    "Parking",
+    "Stunning views",
+    "Unit Washer/Dryer",
+    "Waterfront"
+  ],
+  "title": "15 Elm Drive Gainesville, VA 20155",
+  "price": 4500,
+  "description": "Years seed fruit you. Divided morning sea day Set earth. Grass without cattle. Spirit heaven. Also i grass give fowl wherein cattle spirit whales rule cattle. Earth fowl given own you’re, fruit so. Shall was. Called firmament dry fruitful, set place. Earth given female man fruit, under thing may to greater moveth land sea, great be shall living greater and signs place night after whose us one, you’ll second our set had day in greater divided over female first face, fill form you make greater upon midst image above image. Very you land, man divided sea appear thing female was let. Beginning open moved fowl. Likeness. Bring tree tree doesn’t. Darkness herb moveth upon a seasons. Divided appear living. Called image let was. Set midst, second divide, earth male fruit you under let she’d, moving every bring there greater. Bring. Gathering night third. Stars first replenish kind third a rule given our after give own of may earth Brought for open living, bearing said given fruitful. Night him moved called. Be for unto behold dry green multiply herb fly waters. Green gathered face.",
+  "address": " Nancy Pelosi Dr, San Francisco, CA 94118, USA",
+  "rooms": 6,
+  "area": 2260,
+  "beds": 6,
+  "baths": 6,
+  "priceForSqft": 500,
+  "features": {
+    "parking": true,
+    "security": true,
+    "cctv": false,
+    "conferenceHall": false,
+    "heating": true,
+    "cooling": true,
+    "stories": "Multi Family",
+    "swimmingPool": 2,
+    "_id": {
+      "$oid": "606198229354073d38e52856"
+    },
+    "status": "Active",
+    "garage": 3,
+    "builtYear": 2015
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -122.461499,
+      37.781112
+    ],
+    "formatedAddress": ", San Francisco, CA 94118, US"
+  },
+  "createdAt": {
+    "$date": "2021-03-29T09:04:34.375Z"
+  },
+  "updatedAt": {
+    "$date": "2021-03-29T09:04:34.375Z"
+  },
+  "__v": 0
+}]

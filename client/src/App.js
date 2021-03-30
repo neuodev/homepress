@@ -20,7 +20,7 @@ const theme = createMuiTheme({
 });
 
 const client = new ApolloClient({
-  uri: ' http://localhost:5000/graphql',
+  uri: 'https://homepress101.herokuapp.com/graphql',
   cache: new InMemoryCache(),
 });
 
