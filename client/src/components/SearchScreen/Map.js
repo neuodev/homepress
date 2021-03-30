@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useSelector } from 'react-redux';
 import { getLocations } from '../../utils/getLocations';
+import './style.css';
 const MapboxGLMap = ({ properties }) => {
   const locations = getLocations(properties);
   console.log(locations);
@@ -63,10 +63,10 @@ const MapboxGLMap = ({ properties }) => {
 
   return (
     <div
-      className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 mt-5 lg:mt-0'
+      className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 mt-5 lg:mt-0   h-full'
       id='map-height'>
       <div
-        className=' absoluted dtop-0 dleft-0  shadow-inner w-full h-full'
+        className=' shadow-inner w-full h-full'
         ref={el => (mapContainer.current = el)}
       />
     </div>

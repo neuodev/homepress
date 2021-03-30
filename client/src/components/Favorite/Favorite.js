@@ -5,7 +5,7 @@ import { FAVORITE_CLEAR_ITEMS } from '../../actions/actionsType';
 import FavoriteCard from './FavoriteCard';
 const Favorite = ({ children }) => {
   const { favoriteItems } = useSelector(state => state.favoriteList);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
   const clearFavoriteList = () => {
