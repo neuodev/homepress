@@ -63,7 +63,7 @@ const MapboxGLMap = ({ properties }) => {
 
   return (
     <div
-      className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 '
+      className='col-span-12 px-5 shadow-inner  lg:col-span-6 lg:px-0 mt-5 lg:mt-0'
       id='map-height'>
       <div
         className=' absoluted dtop-0 dleft-0  shadow-inner w-full h-full'

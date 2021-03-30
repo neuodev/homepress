@@ -1,13 +1,9 @@
-import { useQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
-import { SEARCH_PROPERTY } from '../../querys/querys';
-import Alert from '../utils/Alert';
+
+import React, {  useState } from 'react';
 import PropertySearchCard from './PropertySearchCard';
-import { useSelector, useDispatch } from 'react-redux';
-import { pipeline } from '../utils/pipeline';
-import { GET_LOCATIONS, RESET_FILTER, SORT } from '../../actions/actionsType';
-import { getLocations } from '../../utils/getLocations';
-import { searchPropertiesAction } from '../../actions/properties';
+import { useDispatch } from 'react-redux';
+import { RESET_FILTER, SORT } from '../../actions/actionsType';
+
 const selectSort = [
   {
     text: 'Newset',
@@ -51,7 +47,7 @@ const Properties = ({ properties, history }) => {
     }
   });
   return (
-    <div className='col-span-12   lg:col-span-6  shadow-2xl ' id='pro-h'>
+    <div className='col-span-12   lg:col-span-6   ' id='pro-h'>
       <div className='mb-5 lg:mb-2 lg:mt-2  text-center flex  flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start  px-5 py-4'>
         <div>
           <h1 className='text-3xl font-semibold text-gray-700 mb-4 lg:mb-1'>
