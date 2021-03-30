@@ -21,7 +21,7 @@ const Showcase = ({ history }) => {
         <div className=' md:flex items-center justify-between container mx-auto'>
           <Link to='/'>
             <img
-              className='mb-9'
+              className='mb-9 md:mb-0'
               src='./images/logo-dark.svg'
               alt='homepress'
             />
