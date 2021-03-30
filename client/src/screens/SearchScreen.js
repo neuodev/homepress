@@ -7,12 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pipeline } from '../components/utils/pipeline';
 import { useQuery } from '@apollo/client';
 import { SEARCH_PROPERTY } from '../querys/querys';
-import { searchPropertiesAction } from '../actions/properties';
 import Alert from '../components/utils/Alert';
 
-const SearchScreen = () => {
+const SearchScreen = ({ history }) => {
   const advancedFilter = useSelector(state => state.filter);
-  const dispatch = useDispatch();
 
   const filterPipeline = pipeline(advancedFilter);
 
@@ -24,7 +22,7 @@ const SearchScreen = () => {
 
   return (
     <div className='h-screen'>
-      <NavBar title='Query search' />
+      <NavBar title={advancedFilter.title ? advancedFilter.title : 'Search'} />
       <Filter />
       {loading ? (
         <div>Loading</div>
@@ -34,7 +32,7 @@ const SearchScreen = () => {
         data && (
           <div className='grid grid-cols-12 '>
             <Map properties={data.properties} />
-            <Properties properties={data.properties} />
+            <Properties history={history} properties={data.properties} />
           </div>
         )
       )}

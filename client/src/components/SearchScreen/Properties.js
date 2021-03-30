@@ -5,7 +5,7 @@ import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { pipeline } from '../utils/pipeline';
-import { GET_LOCATIONS, SORT } from '../../actions/actionsType';
+import { GET_LOCATIONS, RESET_FILTER, SORT } from '../../actions/actionsType';
 import { getLocations } from '../../utils/getLocations';
 import { searchPropertiesAction } from '../../actions/properties';
 const selectSort = [
@@ -31,7 +31,7 @@ const selectSort = [
   },
 ];
 
-const Properties = ({ properties }) => {
+const Properties = ({ properties, history }) => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
 
@@ -41,15 +41,18 @@ const Properties = ({ properties }) => {
     setSort(sort);
     dispatch({ type: SORT, payload: sort.value });
   };
-
+  const search = () => {
+    dispatch({ type: RESET_FILTER });
+    history.push('/search');
+  };
   document.addEventListener('click', e => {
     if (!e.target.closest('#sort-list')) {
       setSowList(false);
     }
   });
   return (
-    <div className='col-span-12   lg:col-span-6 px-3 py-4 shadow-xl' id='pro-h'>
-      <div className='mb-5  text-center flex  flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start '>
+    <div className='col-span-12   lg:col-span-6  shadow-2xl ' id='pro-h'>
+      <div className='mb-5 lg:mb-2 lg:mt-2  text-center flex  flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start  px-5 py-4'>
         <div>
           <h1 className='text-3xl font-semibold text-gray-700 mb-4 lg:mb-1'>
             Apartments
@@ -86,9 +89,26 @@ const Properties = ({ properties }) => {
         </div>
       </div>
       <div>
-        {properties.map(property => {
-          return <PropertySearchCard property={property} key={property.id} />;
-        })}
+        {properties.length === 0 ? (
+          <div className='px-4'>
+            <div className='w-full bg-yellow-200 px-5 py-8 uppercase tracking-wider font-semibold text-yellow-700 text-xl shadow-xl'>
+              <h1 className=''>No Result Founded</h1>
+              <button
+                onClick={search}
+                className='py-3 px-6 bg-yellow-300 my-4 uppercase tracking-wider  text-sm  font-semibold focus:outline-none focus:ring focus:ring-yellow-400 '>
+                Look for Another Property
+              </button>
+            </div>
+          </div>
+        ) : (
+          properties.map(property => {
+            return (
+              <div className='px-5'>
+                <PropertySearchCard property={property} key={property.id} />
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );
