@@ -13,4 +13,5 @@ export const BEDS = 'BEDS';
 export const BATHS = 'BATHS';
 export const STATUS = 'STATUS';
 export const TITLE = 'TITLE';
+export const SORT = 'SORT';
 export const RESET_FILTER = 'RESET_FILTER';
