@@ -24,10 +24,10 @@ const SearchScreen = ({ history }) => {
     <div className='h-screen'>
       <NavBar title={advancedFilter.title ? advancedFilter.title : 'Search'} />
       <Filter />
-      {loading ? (
+      {true ? (
         <div>Loading</div>
       ) : error ? (
-        <Alert />
+        <Alert serverity='error' message={error.message} />
       ) : (
         data && (
           <div className='grid grid-cols-12 '>
