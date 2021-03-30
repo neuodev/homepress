@@ -15,13 +15,10 @@ export const favoriteList = (
       const item = payload;
 
       const existItem = state.favoriteItems.find(x => x.id === item.id);
-
       if (existItem) {
         return {
           ...state,
-          favoriteItems: state.favoriteItems.map(x =>
-            x.id === existItem.id ? item : x
-          ),
+          favoriteItems: state.favoriteItems.filter(x => x.id !== item.id),
         };
       } else {
         return {
