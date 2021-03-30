@@ -10,6 +10,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.479);
   z-index: 1;
+  transition: all 0.4s ease;
 }
 
 .show {
@@ -148,6 +149,10 @@
     height: 53vh;
     overflow: hidden;
     transition: all 1s ease;
+  }
+  .hideFavorite {
+    transform: translateX(-100px);
+    transition: transform 1.2s ease;
   }
 }
 
