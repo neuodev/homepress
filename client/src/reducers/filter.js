@@ -6,6 +6,7 @@ import {
   CITY,
   PRICE,
   RESET_FILTER,
+  SORT,
   STATUS,
   TITLE,
 } from '../actions/actionsType';
@@ -57,6 +58,11 @@ export const filter = (state = {}, { type, payload }) => {
       return {
         ...state,
         status: payload,
+      };
+    case SORT:
+      return {
+        ...state,
+        sort: payload,
       };
 
     case RESET_FILTER:
