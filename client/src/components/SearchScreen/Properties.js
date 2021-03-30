@@ -1,11 +1,11 @@
 import { useQuery } from '@apollo/client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SEARCH_PROPERTY } from '../../querys/querys';
 import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { pipeline } from '../utils/pipeline';
-import { SORT } from '../../actions/actionsType';
+import { GET_LOCATIONS, SORT } from '../../actions/actionsType';
 import { getLocations } from '../../utils/getLocations';
 const selectSort = [
   {
@@ -48,6 +48,12 @@ const Properties = () => {
       filter: filterPipeline,
     },
   });
+
+  useEffect(() => {
+    console.log('+1');
+    const features = getLocations(data.properties);
+    dispatch({ type: GET_LOCATIONS, payload: features });
+  }, [data]);
 
   document.addEventListener('click', e => {
     if (!e.target.closest('#sort-list')) {
