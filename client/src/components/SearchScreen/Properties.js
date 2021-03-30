@@ -4,6 +4,7 @@ import { SEARCH_PROPERTY } from '../../querys/querys';
 import Alert from '../utils/Alert';
 import PropertySearchCard from './PropertySearchCard';
 import { useSelector } from 'react-redux';
+import { pipeline } from '../utils/pipeline';
 const selectSort = [
   {
     text: 'Newset',
@@ -25,65 +26,19 @@ const selectSort = [
 const Properties = () => {
   const [sort, setSort] = useState(selectSort[0]);
   const [showList, setSowList] = useState(false);
-  const {
-    title,
-    status,
-    amenities,
-    countery,
-    price,
-    area,
-    beds,
-    baths,
-  } = useSelector(state => state.filter);
+  const advancedFilter = useSelector(state => state.filter);
   const updateSelect = sort => {
     setSowList(false);
     setSort(sort);
   };
 
-  let filter = {};
+  const filterPipeline = pipeline(advancedFilter);
 
-  if (title) {
-    filter.title = title;
-  }
-  if (amenities) {
-    filter.amenities = {
-      in: [...amenities],
-    };
-  }
-  if (countery) {
-    filter.city = countery;
-  }
-
-  
-  if (price) {
-    filter.price = {
-      gte: price[0],
-      lte: price[1],
-    };
-  }
-  if (area) {
-    filter.area = {
-      gte: area[0],
-      lte: area[1],
-    };
-  }
-
-  if (beds) {
-    filter.beds = beds;
-  }
-  if (baths) {
-    filter.baths = baths;
-  }
-  if (status) {
-    filter.status = status;
-  }
-  console.log(filter);
   const { data, loading, error } = useQuery(SEARCH_PROPERTY, {
     variables: {
-      filter,
+      filter: filterPipeline,
     },
   });
-  console.log(data);
 
   document.addEventListener('click', e => {
     if (!e.target.closest('#sort-list')) {
