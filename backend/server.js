@@ -1,4 +1,5 @@
 const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 const colors = require('colors');
@@ -21,5 +22,20 @@ app.use(morgan('dev'));
 
 const server = new ApolloServer({ typeDefs, resolvers: { Mutation, Query } });
 server.applyMiddleware({ app });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, '..', 'client', 'build', 'index.html')
+    )
+  );
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....');
+  });
+}
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server runing on port ${PORT}`.bgMagenta));
