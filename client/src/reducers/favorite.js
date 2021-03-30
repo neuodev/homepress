@@ -29,7 +29,7 @@ export const favoriteList = (
     case FAVORITE_REMOVE_ITEM:
       return {
         ...state,
-        favoriteItems: state.cartItems.filter(x => x.id !== payload),
+        favoriteItems: state.favoriteItems.filter(x => x.id !== payload),
       };
     case FAVORITE_CLEAR_ITEMS:
       return {
