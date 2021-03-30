@@ -1,17 +1,20 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const steps = [
   {
     stepNumber: 1,
     heading: 'Listing Type',
+    path: '/addListing',
   },
   {
     stepNumber: 2,
     heading: 'Create Listing',
+    path: '/addListing/create',
   },
   {
     stepNumber: 3,
     heading: 'Done',
+    path: '/addListing/done',
   },
 ];
 
@@ -22,11 +25,12 @@ const Steps = ({ activeStep }) => {
         <h1 className='text-5xl font-bold text-gray-700'>Add New Property</h1>
       </div>
       <div className='flex items-center justify-between'>
-        {steps.map(({ heading, stepNumber }) => (
-          <div
+        {steps.map(({ heading, stepNumber, path }) => (
+          <Link
+            to={path}
             className={`${
-              activeStep == stepNumber && 'border-blue-400'
-            } border-b-4 w-full mr-4 py-3 text-xl text flex items-center font-semibold text-gray-700 '`}
+              activeStep === stepNumber && 'border-blue-400'
+            } border-b-4 w-full mr-4 py-3 text-xl text flex items-center font-semibold text-gray-700 cursor-pointer `}
             key={stepNumber}>
             <p
               className={`${
@@ -35,7 +39,7 @@ const Steps = ({ activeStep }) => {
               {stepNumber}
             </p>
             <h1>{heading}</h1>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

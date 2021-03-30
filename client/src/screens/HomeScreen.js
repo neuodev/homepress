@@ -10,7 +10,7 @@ import Why from '../components/HomeScreen/Why';
 const HomeScreen = ({ history }) => {
   return (
     <div className='bg-gray-50'>
-      <Showcase />
+      <Showcase history={history} />
       <Search history={history} />
       <Properties history={history} />
       <Why />

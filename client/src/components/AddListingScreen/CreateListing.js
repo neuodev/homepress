@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Steps from './Steps';
 import Select from './Select';
+import { Link } from 'react-router-dom';
 import './style.css';
 import { Checkbox } from '@material-ui/core';
+import Alert from '../utils/Alert';
 const selectCategory = ['Buy', 'Rent', 'Sold'];
 const selectStores = ['Single Family', 'Multi Family'];
 const selectRegion = [
@@ -38,7 +40,7 @@ const selectHeating = ['Yes', 'No'];
 const selectCooling = ['Yes', 'No'];
 const selectStatus = ['Active', 'Sold'];
 
-const CreateListing = () => {
+const CreateListing = ({}) => {
   const [category, setCagegory] = useState('Select');
   const [showCategory, setShowCategory] = useState(false);
 
@@ -240,6 +242,16 @@ const CreateListing = () => {
                 <p>{item}</p>
               </div>
             ))}
+          </div>
+          <div>
+            <div className='my-5'>
+              <Alert message='This Form is demo only !' />
+            </div>
+            <Link
+              to='/addListing/done'
+              className='bg-blue-500 py-4 px-10  my-3  inline-block  focus:outline-none focus:ring text-white uppercase tracking-wider  text-lg  shadow-md  hover:bg-blue-400 transition-colors duration-300 '>
+              Create Property
+            </Link>
           </div>
         </div>
       </div>
