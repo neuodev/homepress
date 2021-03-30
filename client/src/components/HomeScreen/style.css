@@ -109,6 +109,19 @@
   transition: transform 0.2s ease;
 }
 
+.showFavoriteList {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.4s ease;
+  transform-origin: top right;
+}
+.hideFavoriteList {
+  opacity: 0;
+  transform: scale(0.95);
+  height: 0px;
+  transform-origin: top right;
+  transition: all 0.4s ease;
+}
 @media (min-width: 640px) {
   #height-search-card {
     height: 229px;
