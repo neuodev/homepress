@@ -4,8 +4,7 @@
   "description": "real estate website ",
   "main": "server.js",
   "scripts": {
-    "start": "cd backend && node server.js",
-    "heroku-postbuilddd": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "cd backend && node server.js"
   },
   "author": "Ahmed Ibrahim",
   "license": "MIT",
