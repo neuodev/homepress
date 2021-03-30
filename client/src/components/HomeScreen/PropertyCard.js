@@ -31,18 +31,18 @@ const PropertyCard = ({ property }) => {
       id='card-height'>
       <button
         onClick={addToFavorite}
-        className={` absolute  right-3 top-2 cursor-pointer text-white text-xl z-50 focus:outline-none  focus:ring-gray-400 rounded-full  ${
+        className={` absolute  right-3 top-2 xl:left-3  cursor-pointer text-white text-xl z-50 focus:outline-none  focus:ring-gray-400 rounded-full  ${
           showFavorite ? 'showFavorite' : 'hideFavorite'
         }`}>
         {isExist ? (
-          <i class='fa fa-heart' aria-hidden='true'></i>
+          <i className='fa fa-heart' aria-hidden='true'></i>
         ) : (
-          <i class={`far fa-heart`} aria-hidden='true'></i>
+          <i className={`far fa-heart`} aria-hidden='true'></i>
         )}
       </button>
-      <Link to={`/listing/${id}`}>
+      <Link to={`/listing/${id}`} className='xl:w-1/2 flex-none  '>
         <div
-          className=' relative w-full h-1/2 xl:h-full xl:w-1/2 xl:flex-none bg-blue-50 rounded-md xl:mr-3'
+          className=' relative w-full h-1/2 xl:h-full xl:w-full xl:flex-none  bg-blue-50 rounded-md xl:mr-3'
           id={showFavorite ? 'overlay' : ''}>
           <Link to={`/listing/${id}`}>
             <img
@@ -53,9 +53,11 @@ const PropertyCard = ({ property }) => {
           </Link>
         </div>
       </Link>
-      <div className='px-3 py-4 mt-1 h-1/2 '>
-        <Link to={`/listing/${id}`}>
-          <h1 className='mb-4 text-lg font-semibold md:text-2xl '>{title}</h1>
+      <div className='px-3 py-4 mt-1 h-1/2 xl:h-full flex-none  '>
+        <Link to={`/listing/${id}`} className=''>
+          <h1 className='mb-4 text-lg font-semibold md:text-2xl truncate  xl:w-72'>
+            {title}
+          </h1>
         </Link>
         <div className='flex flex-wrap items-center justify-start mb-4 '>
           <div className='w-1/2 flex items-center text-gray-400 md:text-lg  '>
