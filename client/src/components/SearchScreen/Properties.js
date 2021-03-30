@@ -51,9 +51,7 @@ const Properties = () => {
 
   useEffect(() => {
     if (data) {
-      const features = getLocations(data.properties);
-      dispatch({ type: GET_LOCATIONS, payload: features });
-      
+  
     }
   }, [data]);
 
