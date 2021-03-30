@@ -30,9 +30,9 @@ const Favorite = ({ children }) => {
       </div>
       <div
         className={`${
-          show ? 'showFavoriteList' : 'hideFavoriteList'
+          show ? 'showFavoriteList z-50' : 'hideFavoriteList z-0'
         } top-12 right-0 absolute 
-      w-96 bg-gray-50 shadow-xl pb-5
+      w-96 bg-gray-50 shadow-xl pb-5 
       `}>
         <div className=' '>
           <div className='flex items-baseline justify-between mb-2 px-5 py-7'>

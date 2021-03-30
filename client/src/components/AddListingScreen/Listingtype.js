@@ -41,7 +41,7 @@ const Listingtype = () => {
                 background: `url(${type.image}) center center/cover`,
               }}
               key={idx}>
-              <h1 className='text-white hover:bg-white transition-all duration-300 hover:text-gray-800 w-full h-full flex items-center justify-center text-4xl absolute z-50'>
+              <h1 className='text-white hover:bg-white transition-all duration-300 hover:text-gray-800 w-full h-full flex items-center justify-center text-4xl absolute z-30'>
                 <p> {type.title}</p>
               </h1>
             </Link>

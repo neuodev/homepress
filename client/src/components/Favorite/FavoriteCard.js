@@ -15,7 +15,7 @@ const FavoriteCard = ({ property }) => {
         <Link to={`/listing/${id}`}>
           <img
             className='h-full w-full inline-block object-cover'
-            src={images[0]}
+            src={images[0].replace(/./, '')}
             alt={title}
           />
         </Link>

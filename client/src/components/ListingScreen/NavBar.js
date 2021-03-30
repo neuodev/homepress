@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Favorite from '../Favorite/Favorite';
 const NavBar = ({ title }) => {
   return (
     <>
@@ -15,15 +16,16 @@ const NavBar = ({ title }) => {
               />
             </Link>
             <div className='flex items-center justify-center space-x-3 '>
-              <button className='border  px-3 py-2 rounded-full focus:outline-black  hover:text-white hover:bg-blue-500 transition-colors duration-300 '>
+              <Link
+                to='/addListing'
+                className='border  px-3 py-2 rounded-full focus:outline-black  hover:text-white hover:bg-blue-500 transition-colors duration-300 '>
                 Add Listing
-              </button>
-              <button className='border  px-3 py-2 rounded-full focus:outline-black  '>
-                <i class='fa fa-heart' aria-hidden='true'></i>
-              </button>
-              <button className='border  px-3 py-2 rounded-full focus:outline-black  '>
-                <i class='fa fa-retweet' aria-hidden='true'></i>
-              </button>
+              </Link>
+              <Favorite>
+                <button className='border  px-3 py-2 rounded-full focus:outline-black  '>
+                  <i class='fa fa-heart' aria-hidden='true'></i>
+                </button>
+              </Favorite>
             </div>
           </div>
         </div>
